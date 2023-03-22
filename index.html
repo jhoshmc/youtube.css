@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso CSS</title>
+    <!--Formas de invocar css, hay 3 formas -->
+    <!--(3) Forma y la ideal es la defnicion mediante una hoja externa -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--otra forma (2) es: aplicar estilos internamente-->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      h1 {
+        color: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <article id="temario-css">
+      <h1>Aprendiendo CSS</h1>
+      <!--<i>palabra que no esta en el idioma establecido</i>-->
+      <!--se puede apreciar una manera (1) de invocar css: definir estilos en linea-->
+      <p>
+        <i style="font-weight: bold; color: orange">Cas cading Style Sheets</i>
+        -Hojas De Estilo En Cascada
+      </p>
+      <hr />
+      <h2>Temario del curso</h2>
+      <ul>
+        <li><a href="index.html#selectores-basicos">Selectores Básicos</a></li>
+        <li>
+          <a href="index.html#selectores-avanzados">Selectores Avanzados</a>
+        </li>
+      </ul>
+    </article>
+    <hr />
+    <article id="selectores-basicos">
+      <h2>Selectores Básicos</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga iste,
+        tenetur ab optio, facilis temporibus ullam quae debitis sunt nemo,
+        numquam obcaecati quaerat atque magnam. Laborum ipsa obcaecati soluta
+        eum!
+      </p>
+      <p id="parrafo-dos">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+        rem temporibus explicabo veniam, enim, adipisci quis expedita tenetur,
+        ipsam obcaecati amet pariatur voluptatem earum? Asperiores deserunt
+        reprehenderit accusamus modi magni.
+      </p>
+      <p class="text-32 bg-skyeblue">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+        aliquid nulla adipisci ex? Saepe modi eveniet laudantium, repudiandae
+        quia, pariatur possimus porro explicabo nobis rem ad voluptate dolorem
+        vel similique!
+      </p>
+      <p class="text-20 bg-steelblue text-white">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius fugiat
+        non dolores, ipsa consequuntur placeat eos velit temporibus tempora
+        aperiam porro. Nisi ut quaerat, eius fugit itaque ex ipsam dignissimos.
+      </p>
+      <p class="text-32 bg-steelblue text-white">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat sint
+        placeat asperiores, laudantium vitae quisquam sapiente vel corrupti
+        officia cumque, ea cupiditate voluptatem? Autem obcaecati saepe illo
+        veniam asperiores ad.
+      </p>
+
+      <a href="index.html#temario-css">☝️</a>
+    </article>
+    <hr />
+    <article id="selectores-avanzados">
+      <h2>Selectores Avanzados</h2>
+      <h3>Selectores de hijos</h3>
+      <h4>Selectores de hijos directos</h4>
+      <ul class="hijos-directos">
+        <li><b>Spring</b></li>
+        <li><b>Summer</b></li>
+        <li><b>Autumn</b></li>
+        <li><b>Winter</b></li>
+      </ul>
+      <h4>Selectores de hijos descendientes</h4>
+      <ul class="hijos-descendientes">
+        <li><b>Spring</b></li>
+        <li><b>Summer</b></li>
+        <li><b>Autumn</b></li>
+        <li><b>Winter</b></li>
+      </ul>
+      <h3>Selectores de hermanos</h3>
+      <h4>Selector de hermanos(en general)</h4>
+      <ul>
+        <li><b>Spring</b></li>
+        <li class="hermanos-general"><b>Summer</b></li>
+        <li><b>Autumn</b></li>
+        <li><b>Winter</b></li>
+      </ul>
+      <h4>Selector de hermanos adyacente</h4>
+      <ul>
+        <li><b>Spring</b></li>
+        <li class="hermanos-adyacentes"><b>Summer</b></li>
+        <li><b>Autumn</b></li>
+        <li><b>Winter</b></li>
+      </ul>
+      <h3>Selectores de atributos</h3>
+      <nav class="selectores-atributos">
+        <!--emet: ul>li*8>a[target="-_blank"]-->
+        <ul>
+          <li><a href="https://jonmircha.com" target="_blank">Inicio</a></li>
+          <li>
+            <a class="menu-item cursos button" href="https://jonmircha.com/cursos" target="_blank">Cursos</a>
+          </li>
+          <li><a href="https://jonmircha.com/blog" target="_blank">Blog</a></li>
+          <li>
+            <a href="https://jonmircha.com/mentoria" target="_blank"
+              >Mentoria</a
+            >
+          </li>
+          <li><a class="menu-item hola button" href="https://jonmircha.com/hola" target="_blank">Hola</a></li>
+          <li>
+            <a href="https://www.youtube.com/jonmircha" target="_blank">
+              <img class="icons" src="img/youtube-icon.svg" alt="youtube"
+            /></a>
+          </li>
+          <li>
+            <a href="https://discord.com/invite/gPgJMUF" target="_blank">
+              <img class="icons" src="img/discord-icon.svg" alt="Discord"
+            /></a>
+            <li><a href="index.html#temario-css">Regesar a temario</a></li>
+          </li>
+        </ul>
+      </nav>
+      <h3>Selector Universal(*)</h3>
+      <a href="index.html#temario-css">☝️</a>
+    </article>
+    <hr />
+  </body>
+</html>
