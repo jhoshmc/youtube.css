@@ -18,9 +18,13 @@ importente: ES una mala practica usar el @import, porque aon bloqueante a la hor
 
 @import url("otra-hoja.css");
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   color: orangered;
-  background: black;
+  background-color: black;
 }
 
 /*
@@ -123,4 +127,67 @@ p {
 /* Selector Universal */
 * {
   font-family: sans-serif;
+}
+
+/* a todos los elementos dentro de la class selector_universal */
+.selector_universal * {
+  font-size: 24px;
+}
+
+/* psudoclases- Dan estilos dependiendo del contexto, posicion o estado del elemento
+https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes
+ */
+
+/* a lo que pida requerido, los bordes esten en color amarillo */
+.form-pseudoclases *:required {
+  border-color: yellow;
+}
+
+/* a los que tengan valido, los vordes esten de color verde */
+.form-pseudoclases *:valid {
+  border-color: green;
+}
+
+/* a los que tenfan invalido, los bordes seran rojos */
+.form-pseudoclases *:invalid {
+  border-color: red;
+}
+
+/* en el recuadro que este seleccionado el fondo sera de color establecido */
+.form-pseudoclases *:focus {
+  background-color: skyblue;
+}
+
+/* a lo que tenga desavilitado, tendra de color rosa */
+.form-pseudoclases *:disabled {
+  background-color: pink;
+}
+
+/*
+orden de definicion de las pseudoclases:
+:link
+:active
+:visited
+:hover
+*/
+
+/* a los enlaces visatos le apliquemos un color, la clase visited tiene que ir arriva del estado hover */
+.menu-pseudoclases a:visited {
+  color: olive;
+}
+
+/* hover: es aquel estado en el que tenemos el cursor del mouse en el elemento, este estado aplica para cualquier elemento.
+hover es un estado interactivo , por eso tiene que estar al final de las pseudoclases  */
+.menu-pseudoclases a:hover {
+  color: orange;
+}
+
+/* cuadno el parrafo este en estado hover( la flecha del mouse este sobre el parrafo ) este incrementara su tamaño */
+.p-pseudoclases:hover {
+  font-size: 20px;
+}
+
+/* cuando el elemento llamado "temario-css" tenga el target(tenga en la url el id activo) */
+#temario-css:target {
+  background-color: lightgreen;
 }
