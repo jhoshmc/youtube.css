@@ -1,5 +1,5 @@
 /*
-Reglas Css consta de 2 partes:
+?Reglas Css consta de 2 partes:
 1) Selector:
     Es el documento HTML al que le podemos aplicar el bloque de declaracion de estilos 
     un selector podria ser cualquier etiqueta HTML, 
@@ -28,7 +28,7 @@ h1 {
 }
 
 /*
-Selectores basicos
+todo Selectores basicos
   1)Etiquetas-son elementos HTML
   2)Identificadores- atributo id- #
   3)Clases-atributo class-.
@@ -62,7 +62,8 @@ p {
 .text-white {
   color: white;
 }
-
+/* todo selectores avanzados  */
+/* ? selectores de hijos (directos y descendientes) */
 /* selector de hijos directos se usa el ">"*/
 .hijos-directos > li {
   background-color: thistle;
@@ -72,7 +73,7 @@ p {
 .hijos-descendientes b {
   background-color: thistle;
 }
-
+/* ?  selectores Hermanos (en general y adyacente) */
 /* Los selectores de hermanos van a aplicar los elementos que son hermanos y que estén por debajo del elemento de referencia */
 .hermanos-general ~ li {
   background-color: thistle;
@@ -83,17 +84,19 @@ p {
   background-color: thistle;
 }
 
-/*iconos de los enlaces*/
+/**iconos de los enlaces*/
 .icons {
   width: 40px;
   height: 40px;
 }
 
-/* Selectores-atributos */
+/*? selectores de atributos */
+/* Selectores-atributos, este aplica las etiquetas que tengan un atributo en especifico */
 .selectores-atributos a[href] {
   color: orangered;
 }
 
+/* esto aplica a las etiquetas que tengan  atributos con cierto valor  */
 .selectores-atributos a[target="_blank"] {
   font-weight: bold;
 }
@@ -103,7 +106,7 @@ p {
   font-size: 24px;
 }
 
-/* El comodin del ^ aplica el estilo si tiene el texto en cuestion al inicio */
+/* El comodin del ^ aplica el estilo siempre y cuando el texto empiecen con la palabra o termino deceado */
 .selectores-atributos a[href^="https://"]
 {
   text-decoration: none;
@@ -124,31 +127,33 @@ p {
   font-style: italic;
 }
 
-/* Selector Universal */
+/*? Selector Universal */
+/* a todo el documento se le aplicara este estilo */
 * {
   font-family: sans-serif;
 }
 
-/* a todos los elementos dentro de la class selector_universal */
+/* a todos los elementos dentro de la class selector_universal se palicaran el stilo puesto  */
 .selector_universal * {
   font-size: 24px;
 }
-
-/* psudoclases- Dan estilos dependiendo del contexto, posicion o estado del elemento
+/* todo pseudoclases */
+/* ? pseudoclases de elementos interactivos */
+/**psudoclases- Dan estilos dependiendo del contexto, posicion o estado del elemento
 https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes
  */
 
-/* a lo que pida requerido, los bordes esten en color amarillo */
+/* los elementos que esten en la clase form-pseudoclases, los elementos que tengan required se aplicara el estilo */
 .form-pseudoclases *:required {
   border-color: yellow;
 }
 
-/* a los que tengan valido, los vordes esten de color verde */
+/* a los elementos que tengan valido, los vordes esten de color verde */
 .form-pseudoclases *:valid {
   border-color: green;
 }
 
-/* a los que tenfan invalido, los bordes seran rojos */
+/* a los elementos que tenfan invalido, los bordes seran rojos */
 .form-pseudoclases *:invalid {
   border-color: red;
 }
@@ -158,13 +163,13 @@ https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes
   background-color: skyblue;
 }
 
-/* a lo que tenga desavilitado, tendra de color rosa */
+/* a lo que tenga la propiedad disabled, tendra de color rosa */
 .form-pseudoclases *:disabled {
   background-color: pink;
 }
 
 /*
-orden de definicion de las pseudoclases:
+!importante orden de definicion de las pseudoclases(su jerarquia):
 :link
 :active
 :visited
@@ -176,12 +181,15 @@ orden de definicion de las pseudoclases:
   color: olive;
 }
 
-/* hover: es aquel estado en el que tenemos el cursor del mouse en el elemento, este estado aplica para cualquier elemento.
-hover es un estado interactivo , por eso tiene que estar al final de las pseudoclases  */
+/** hover: es aquel estado en el que tenemos el cursor del mouse en el elemento, este estado aplica para cualquier elemento.
+
+**hover es un estado interactivo , por eso tiene que estar al final de las pseudoclases  */
+
+/* esto probocara que al padar el mouse por los enlaces, estos pasen a color anaranjado */
 .menu-pseudoclases a:hover {
   color: orange;
 }
-
+/* * el estado hover lo tiene cualquier elemento (culaquier etiqueta) */
 /* cuadno el parrafo este en estado hover( la flecha del mouse este sobre el parrafo ) este incrementara su tamaño */
 .p-pseudoclases:hover {
   font-size: 20px;
@@ -190,4 +198,89 @@ hover es un estado interactivo , por eso tiene que estar al final de las pseudoc
 /* cuando el elemento llamado "temario-css" tenga el target(tenga en la url el id activo) */
 #temario-css:target {
   background-color: lightgreen;
+}
+
+/* ? pseudoclases por la posicion que que ocupa el elemento dentro de su contenedor */
+
+/* el estilo se va a plicar al primer elemento que tenga el elemento padre y que sea un li*/
+.lista-pseudoclases li:first-child {
+  color: green;
+}
+
+/* lo mismo, pero para el último hijo li  */
+.lista-pseudoclases li:last-child {
+  color: violet;
+}
+/* lo mismno pero al numero del hijo que quieras , pasando el número como un argumento */
+.lista-pseudoclases li:nth-child(3) {
+  color: navy;
+}
+/* tambien permiten usar expreciones, como siertas formulas, en este de 4 en 4 li se van a plicar el estilo */
+.lista-pseudoclases li:nth-child(4n) {
+  font-size: 20px;
+}
+/* lo mismo , estilo negrita */
+.lista-pseudoclases li:nth-child(3n + 1) {
+  font-weight: bold;
+}
+/* lo mismo , para elementos pares (even) y impares (odd) */
+.lista-pseudoclases li:nth-child(even) {
+  background-color: yellow;
+}
+.lista-pseudoclases li:nth-child(odd) {
+  background-color: orangered;
+}
+/* el primero en su tipo se va aplicar el estilo, ya que si se pone p:first-child, no va aplicar , porque el primer  hijo es el header */
+.articulo-pseudoclases p:first-of-type {
+  background-color: pink;
+}
+/* lo mismo pero en ultimo en su tipo */
+.articulo-pseudoclases p:last-of-type {
+  background-color: violet;
+}
+/* lo mismo pero al número que pasemos como parametro */
+.articulo-pseudoclases p:nth-of-type(3) {
+  background-color: fuchsia;
+}
+/* negacion , aplicar estilo a todos excepto, si quieres agregar mas elementos que no quieras, las vas agregando por comas, not(p,button,.lista,#uno) */
+.articulo-pseudoclases *:not(p) {
+  background-color: beige;
+}
+
+/* todo pseudo elementos */
+/* estos van a dar estilos a partes especificas de un elemento , para diferenciar de las clases , en las clases se usan solo ':' *:not(p) en los elementos se usan '::' *::not(p) 
+https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements*/
+
+/* before , after (antes y despues) */
+.saga-geminis::before {
+  content: "🤼‍♂️";
+}
+.saga-geminis::after {
+  content: "♊";
+}
+.saga-precio::before {
+  content: "$";
+  font-weight: bold;
+}
+.saga-precio::after {
+  content: "USD";
+  font-weight: bold;
+}
+/* referencia a la primera letra */
+.p-pseudoelementos::first-letter {
+  font-weight: bold;
+  font-size: 32px;
+}
+/* referencia a la primera linea */
+.p-pseudoelementos::first-line {
+  color: coral;
+}
+/* cambiar el color al seleccionar */
+.p-pseudoelementos::selection {
+  color: greenyellow;
+  background-color: black;
+}
+/* estilos al placeholder de un input */
+.input-pseudoelementos::placeholder {
+  color: green;
 }
