@@ -20,6 +20,7 @@ importente: ES una mala practica usar el @import, porque aon bloqueante a la hor
 
 html {
   scroll-behavior: smooth;
+  background-color: cornsilk;
 }
 
 h1 {
@@ -283,4 +284,17 @@ https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements*/
 /* estilos al placeholder de un input */
 .input-pseudoelementos::placeholder {
   color: green;
+}
+
+/* todo Agrupar selectores */
+/* compartir los estilos , esto se hace atraves de ','(comas) */
+.form-agrupar-selectores input[type="text"],
+.form-agrupar-selectores input[type="email"],
+.form-agrupar-selectores textarea {
+  border-color: yellow;
+  border-width: 2px;
+  background-color: black;
+  font-size: 20px;
+  display: block;
+  width: 300px;
 }
