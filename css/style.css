@@ -298,3 +298,97 @@ https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements*/
   display: block;
   width: 300px;
 }
+/* todo Algoitmo de CSS */
+/*
+Es la forma en que el navegador aplica aplica los esilos al documento HTML.Es vital entender este concepto para que entiendas como se aplican y en algunas ocaciones se sobre escriben las reglas CSS.
+? 1) La Cascada
+? 2) La Especifidad
+? 3) La Herencia 
+ */
+
+/* ? La Cáscada
+ *Es el mecanismo en que el navegador aplica los estilos y toma en cuenta lo siquiente en este orden:
+ *1)El Origen del código:
+    -El User Agent(los estilos por defecto del navegador)
+    -Personalizaciones del usuario
+    -Los estilos del autor 
+ *2) La Especialidad del 
+ 
+ *3) Orden de Aparición
+ */
+/* ? La Especifidad
+*Es el peso que tiene un selector cuando hay conflicto de estilos Se calcula de la siguiente forma:
+
+Etiquetas y pseudoelementos -----------------0,0,0,1
+*(por cada etiqueta o pseudoelemto que tenga el selector se va a ir sumando 1 en el primer dijito de derecha a izquierda)
+Clases, atributos y pseudoclases-------------0,0,1,0
+*(si el selector tienen un nombre de clases, atributos o pseudoclases, por cada uno se va a ir sumando un 1 en el segundo dijito)
+Identificadores -----------------------------0,1,0,0
+*(si el selector tirne identificadores, se va a ir sumando 1 en el tercer dijito)
+Estilos en linea ----------------------------1,0,0,0
+*(si tiene estilos en linea, se va a ir sumando 1 en el cuarto dijito)
+-!impartant---------------------Rompe la especifidad
+*(la palabra important rompe la especifidad)
+ */
+
+/* ? La Herencia 
+ *Es la capacidad de un selector de obtener (heredar) los valores de sus ancestros más cercanos, para aplicarla se usa el valor 'inherit', si queremos evitarla podemos asignar otro valor o inicializar la propiedad en cuestión con el valor 'initial' 
+ lista de propiedades que en las que aplica la herencia
+ https://web.dev/learn/css/inheritance?hl=es#which-properties-are-inheritable
+ */
+/*! --especificidad y cascada----------------- */
+/** los estilos por cascada , el ultimo seria en estilar , pero por especificidad, esto cambia , el de mayor especificidad aplicara el estilo */
+
+/** 4  ahora esto en una mala pracica , el poner mas de 2 selectores en linea, por especificidad como tiene mayor peso , seria el estilo que se pondria */
+blockquote#cita-marco.cita-marco {
+  background-color: lightsteelblue;
+}
+
+blockquote {
+  background-color: burlywood;
+}
+/**2 como ahora este id tine mayor especificidad , de 100, al final se aplicaria este estilo */
+#cita-marco {
+  background-color: lightgreen;
+}
+
+/**1 como la especifididad de este en de 11, mas que el de la clase cita-marco , se quedaria con este estilo, por especificidad */
+blockquote.cita-marco {
+  background-color: tomato;
+}
+
+.cita-marco {
+  background-color: cornflowerblue;
+}
+
+/**6 Esto es una mala practica , pero con esto se rompe la especificidad y ahora este es el estilo que se pondra en la etiqueta en comun que se estaban aplicando los stilos  */
+.cita-marco {
+  background-color: mediumaquamarine !important;
+}
+
+/**3  ahora este que tine mayor especificidad, es el estilo que se aplicaria */
+blockquote#cita-marco {
+  background-color: lightsalmon;
+}
+
+/* *7, como importan rompre la especificidad, al haber otro se aplica la cascada , el último estilo se aplica */
+.cita-marco {
+  background-color: moccasin !important;
+  font-size: 32px;
+  border-style: dotted;
+  border-color: red;
+}
+
+/* !--------herencia------- */
+/* hay propiedades que no se heredan como bordes, fondos , etc; las propiedades que si se heredan son las tipografias (tamaño,letra),etc */
+
+/* aunque pareciera que estaba pintado antes de poner esto , la verdad es que se pintaba porque estaba dentro de la etiqueta blockquote, pero ahora esta heredando el color de su padre */
+/* recordar que los colores no se heredan, las tipografias si, si quieres heredar se usa el valor 'inherit' y si queremos evitarla o quitarla , se puede ponr otro valor o poner 'initial' */
+.cita-marco cite {
+  background-color: pink;
+  background-color: inherit;
+  font-size: 24px;
+  font-size: initial;
+  border-style: inherit;
+  border-color: inherit;
+}
