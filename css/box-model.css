@@ -1,0 +1,209 @@
+/*
+https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model
+
+ */
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  border-width: 1px;
+  border-style: solid;
+}
+.informacion {
+  background-color: aquamarine;
+  border-width: 2px;
+  border-style: solid;
+  padding: 4px;
+}
+
+.informacion h4 {
+  color: crimson;
+}
+/*todo width & heigth */
+.ancho-alto {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rebeccapurple;
+  width: 400px;
+  height: 200px;
+}
+/* todo border */
+/* propiedades de tipo shorthand (algo que acorta) */
+.border > h3 {
+  border-width: medium; /* thin-1px, mediun-3px, tick-5px*/
+  border-color: green;
+  border-style: dashed; /* hay varios stilos de bordes*/
+}
+/* color individual en cada lado  */
+.border > p {
+  border-width: medium;
+  border-top-color: red;
+  border-right-color: blue;
+  border-bottom-color: chartreuse;
+  border-left-color: goldenrod;
+  border-style: solid;
+}
+
+/* poner las 3 propieades: width, style, color de border en una sola linea */
+.border > h4 {
+  border: 2px dashed blue;
+}
+
+/*todo Margin & padding */
+.caja-uno,
+.caja-dos {
+  background-color: chocolate;
+  border: medium solid orange;
+  /* 
+  esto aplica margin y padding
+  1 valor = aplica a los 4 lados 
+  2 valores = 
+  primer valor es para los lados verticales (top,buttom)
+  segundo valor es para los lados horizontales (rigth,left)
+  3 valores = 
+  primer valor es para top
+  segundo valor es para los lados horizontales (rigth,left)
+  tercer valor es para buttom
+  4 valores = Piensa en las manecillas del reloj 
+  primer valor es para top (12)
+  segundo valor es para right (3)
+  tercer valor es para buttom (6)
+  cuarto valor es para left (9)
+  */
+  padding: 20px;
+  margin: 20px;
+  padding: 20px 40px;
+  margin: 40px 20px;
+  padding: 0 40px 20px;
+  margin: 50px 30px 0;
+  padding: 0 40px 20px 50px;
+  margin: 100px 50px 30px 0;
+}
+
+/* todo caja de linea vs caja de bloque */
+
+.caja-linea,
+.caja-bloque {
+  background-color: cadetblue;
+  width: 500px;
+  height: 250px;
+  border: solid medium black;
+  padding: 16px;
+}
+.caja-linea {
+  margin: 48px;
+}
+.caja-bloque {
+  margin: 32px;
+}
+
+/* todo propiedad display */
+.caja-linea-d,
+.caja-bloque-d {
+  background-color: cadetblue;
+  width: 500px;
+  height: 250px;
+  border: solid medium black;
+  padding: 16px;
+}
+.caja-linea-d {
+  display: block;
+  margin: 48px;
+}
+.caja-bloque-d {
+  display: inline;
+  margin: 32px;
+}
+.caja-none,
+.caja-linea-bloque,
+.caja-hidden {
+  background-color: green;
+  color: white;
+  border: solid medium black;
+  width: 600px;
+  height: 300px;
+}
+.caja-none {
+  display: none; /*esto oculta a la etiqueta, pero si la carga*/
+}
+.caja-linea-bloque {
+  display: inline-block;
+}
+
+.caja-hidden {
+  visibility: hidden;
+}
+/* todo overflow */
+.overflow-container > h4 {
+  color: red;
+}
+.overflow-v,
+.overflow-h,
+.overflow-s,
+.overflow-a {
+  background-color: darkturquoise;
+  width: 200px;
+  height: 100px;
+  /*
+  overflow-y:scroll  esto generara una barra vertical
+  overflow-x:scroll   esto generara una barra horizontal
+  */
+}
+.overflow-v {
+  overflow: visible; /* por defecto */
+}
+.overflow-h {
+  overflow: hidden; /* oculta lo que se desvorda*/
+}
+.overflow-s {
+  overflow: scroll;
+}
+.overflow-a {
+  overflow: auto;
+}
+
+/* todo Tamaño de caja */
+.box-sizing-content,
+.box-sizing-border {
+  background-color: deepskyblue;
+  box-sizing: content-box;
+  width: 500px;
+  height: 250px;
+  padding: 10px;
+  border: thick solid black;
+  /* mientras se valla agreganso padding,border: figurara que el contenido tiene un tamaño de 500 x 250, pero en realidad , tambien sumara lo agregado */
+  /*
+  w 500+10+10+5+5 = 530
+  h 250+10+10+5+5 = 280 
+   */
+}
+.box-sizing-border {
+  box-sizing: border-box;
+}
+.container-col-3 {
+  background-color: burlywood;
+  width: 600px;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.container-col-3 > * {
+  box-sizing: border-box;
+  border: thin solid red;
+  width: 200px;
+  float: left;
+  padding: 10px;
+}
+/*  link para el articulo
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+
+/* apply a natural box layout model to all elements, but allowing components to change, esto deveria ir al principio del documento css */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
