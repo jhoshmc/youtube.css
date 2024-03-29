@@ -295,15 +295,57 @@
         justamente por que los elementos floran , luego hay problemas de
         superposicion de los elementos que siguen y no flotan
       </p>
+      <p>
+        <strong>clear</strong> nos va a servir para limpiar los ejectos de los
+        elementos flotados
+      </p>
       <article class="container-floats">
-        <section>Este elemento flota a la derecha</section>
+        <section class="float-right">Este elemento flota a la derecha</section>
+
+        <section class="float-left">Este elemento flota a la izquierda</section>
+      </article>
+      <!-- antes se dejava un div basio , cosa que es un mala practica; para aplicar clear y corregir  -->
+      <div class="clear-fix"></div>
+      <article>
         <section>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
           dignissimos dolores iusto numquam, fuga ratione fugiat culpa. Itaque
           debitis quisquam officia modi, deleniti voluptates incidunt qui,
           sequi, magnam voluptate totam!
         </section>
-        <section>Este elemento flota a la izquierda</section>
+      </article>
+    </section>
+    <hr />
+    <section>
+      <h2>Colapso de imagenes verticales</h2>
+      <div>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
+        voluptas omnis explicabo fugit adipisci corrupti consequatur nostrum
+        necessitatibus earum deleniti incidunt eos, praesentium, maiores esse
+        quia cupiditate, accusantium illo repudiandae.
+      </div>
+      <p>consejo: ocupar margin-top o margin-buttom, pero no ambos</p>
+      <p>los margenes vertivales se colapzan</p>
+      <arclicle class="margin-collapse">
+        <section>section 1</section>
+        <section>section 2</section>
+        <p>suma de margenes horizontales</p>
+        <p>margenes horizontales se van sumando</p>
+        <section>
+          <span>span 1</span>
+          <span>span 2</span>
+          <span>span 3</span>
+          <span>span 4</span>
+        </section>
+      </arclicle>
+    </section>
+    <hr />
+    <section>
+      <h2>Centrado de cajas</h2>
+      <article class="sitio-web">
+        <header>Cabecera</header>
+        <main>Contenido Principal</main>
+        <footer>Pie de página</footer>
       </article>
     </section>
     <a href="index.html">😎</a>

@@ -207,3 +207,50 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+/* todo Floats */
+
+.container-floats {
+  background-color: cornflowerblue;
+}
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+.clear-fix {
+  clear: both;
+}
+
+/* todo Colapso de margenes verticales */
+
+.margin-collapse {
+  background-color: skyblue;
+}
+
+.margin-collapse section {
+  border: thin solid black;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.margin-collapse span {
+  border: thin solid black;
+  display: inline-block;
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+/* todo Centrado de cajas */
+/** nota: text-aling:center , este alinea el contenido que tiene la caja dentro de la misa , en este caso se busca centrar la caja dentro del navegador, para esto se va a usar margin-left y margin-right ambos en auto */
+.sitio-web {
+  border: thin solid black;
+  background-color: thistle;
+  width: 800px;
+  height: 1000px;
+  padding: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
