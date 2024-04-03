@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/units.css" />
+    <title>Unidades de medidas</title>
+  </head>
+  <body>
+    <h1>Unidades de medidas</h1>
+    <section class="informacion">
+      <h4>Absolutas</h4>
+      <p>
+        su valor no cambia, son unidades del mundo real: pc, mc, mm, in, Q,
+        pt(1/72in), px(1/96in)
+      </p>
+      <h4>Relativas</h4>
+      <p>
+        su valor es relativo a un contexto: em, rem, ex, ch - al tamaño de la
+        fuente
+      </p>
+      <ul>
+        <li>em - basada en la anchura de la "m" de la fuente del elemento</li>
+        <li>
+          rem - basada en la anchura de la "m" de la fuente del elemento
+          raíz(html)
+        </li>
+        <li>ex - basada en la altura de la "x" de la fuenta del elemento</li>
+        <li>ch - basada en la anchura del "0" de la fuente del elemento</li>
+        <li>% - al tamaño del contenedor</li>
+        <li>vw, vh, vmin, vmax- al tamaño del viewport</li>
+        <ul>
+          <li>vw - ancho del viewport van del 1 al 100</li>
+          <li>vh - alto del viewport van del 1 al 100</li>
+          <li>vmax - entre el vw y vh toma el que tenga mayor valor</li>
+          <li>vmin - entre el vw y nh toma el que tenga menor valor</li>
+        </ul>
+      </ul>
+    </section>
+    <h2>Unidades Absolutas</h2>
+    <h2>Pixiles</h2>
+    <p>es la 1/72 ava parte de una pulgada</p>
+    <p>
+      <strong>nota:</strong>No es recomendable usar pixeles por el tema de
+      risponsidad, ya que estas son unidades que no varian; en la medida de lo
+      posible se recomienda usar <strong>unidades de medidas relativas</strong>
+    </p>
+    <div class="pixels">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquam
+      porro, laborum iusto, voluptatum molestias placeat fugiat dolores ea
+      debitis distinctio? Animi ea veritatis minus debitis reprehenderit facilis
+      natus tempora?
+    </div>
+    <hr />
+    <h2>Unidades Relativas</h2>
+    <h2>EM</h2>
+    <p>
+      van a hacer referencia al tamaño de fuente (la propiedad font-size) que
+      tenga el contenedor padre que tenga este elemento
+    </p>
+    <div class="em">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
+        quasi perspiciatis ut officiis obcaecati minima amet adipisci. Doloribus
+        sit inventore, corporis perspiciatis sint obcaecati necessitatibus
+        tempora optio facilis, modi nemo?
+      </p>
+      <section class="em-child">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        blanditiis alias quibusdam facilis perferendis, in culpa perspiciatis
+        vero, suscipit, aut maiores et. Perspiciatis enim id vero suscipit
+        voluptatibus, eos excepturi.
+      </section>
+    </div>
+
+    <h2>REM</h2>
+    <div class="rem">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, facere
+        aperiam architecto quo dolorem officia id fugiat voluptate consectetur
+        provident cumque ipsa laudantium dolore asperiores, ratione rem, laborum
+        dolorum repudiandae.
+      </p>
+      <section class="rem-child">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+        quibusdam delectus omnis, illum fuga eveniet nobis unde quis facere
+        sequi asperiores fugit, tenetur ipsam sint soluta assumenda culpa
+        tempora similique.
+      </section>
+    </div>
+    <h2>EX</h2>
+    <div class="ex">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, facere
+        aperiam architecto quo dolorem officia id fugiat voluptate consectetur
+        provident cumque ipsa laudantium dolore asperiores, ratione rem, laborum
+        dolorum repudiandae.
+      </p>
+      <section class="ex-child">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+        quibusdam delectus omnis, illum fuga eveniet nobis unde quis facere
+        sequi asperiores fugit, tenetur ipsam sint soluta assumenda culpa
+        tempora similique.
+      </section>
+    </div>
+    <h2>CH</h2>
+    <p>un "ch" equivale un caracter, se puede usar en los formularios</p>
+    <div class="ch">1234567890</div>
+    <div class="ch">qwertyasdfg</div>
+    <div class="ch">12we..6y{}6B</div>
+    <h2>Porcentaje (%)</h2>
+    <p>nota: la altura la va a definir el contenido</p>
+    <div class="percentages">Caja de bloque</div>
+    <div class="height-parent">
+      <section class="height-child">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+        culpa accusantium dolores eaque dolorum, debitis dolorem eum vero?
+        Magnam maxime ducimus sunt voluptatum ipsam incidunt quam a provident
+        quasi repellendus!
+      </section>
+    </div>
+    <hr />
+    <h2>Viewport Units</h2>
+    <p>
+      no importa que un elemento sea un hijo de otro , agregando margin,
+      padding, etc, siempre va a olvidar lo que pasa en los porcentajes y va
+      tomar las dimenciones de la pantalla disponible
+    </p>
+    <section>
+      <div class="viewport">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+        reiciendis praesentium eum perspiciatis eius totam a, cumque iusto
+        nesciunt unde quam, ipsa similique voluptas suscipit, molestiae aliquid
+        consequuntur. Minus, ipsa.
+      </div>
+    </section>
+    <div class="vmax">Caja Vmax</div>
+    <div class="vmin">Caja Vmin</div>
+    <section class="informacion">
+      <h2>Cuando itilizar las distintos tipos de unidades de medidas</h2>
+      <p>
+        ir al tiempo : 3:03:40
+        <a
+          href="https://www.youtube.com/watch?v=p_lT7AgpEMU&t=9801s"
+          target="_blank"
+          >go</a
+        >
+      </p>
+      <p>
+        <strong>se recomienda: </strong> Al elemento html siempre se le defina
+        en pixeles si se tuviera la necesidad, por defecto son
+        <strong>16px</strong>
+      </p>
+      <h4>Absolutas</h4>
+      <p>
+        preferible cuando se este diseñando algo que se va a imprimir, se
+        recomienda unsar, cm ,mm, in(pulgadas),px
+      </p>
+      <h4>unidades relativas</h4>
+      <p>
+        <strong>rem</strong> - todo lo que este para tipografia, distancias
+        (padding, margin)
+      </p>
+      <p>
+        <strong>em</strong> - si quieres ir respetando proporcionalmente los
+        espaciados los bordes, tamaños de ciertos elementos
+      </p>
+      <p><strong>ex</strong> -</p>
+      <p>
+        <strong>ch</strong> - cuando tenga la necesidad de delimitar que ciertos
+        elementos de formulario tenga x caracteres
+      </p>
+      <p>
+        <strong>%</strong> - definicion de alto y ancho de ciertas secciones del
+        contenido
+      </p>
+      <p>
+        <strong>vw</strong> - cuando se tenga que tomar referencia el tamaño de
+        la pantalla
+      </p>
+    </section>
+    <a href="index.html">🤟</a>
+  </body>
+</html>
