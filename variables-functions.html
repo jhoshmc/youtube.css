@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/variables-functions.css" />
+    <title>Variables y funciones en CSS</title>
+  </head>
+  <body>
+    <h1>Variables y funciones en CSS</h1>
+    <h2 class="title-props">Custom Properties (Varibales CSS)</h2>
+    <!-- se puede declarar variables con la propiedad style -->
+    <article class="custom-props-1">
+      <section class="custom-props-2" style="--border-color: red">
+        <div class="custom-props-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          delectus numquam explicabo voluptatem. Doloremque ipsum repudiandae
+          modi, fuga assumenda, dolor consequatur deleniti officiis voluptatum
+          laboriosam officia asperiores fugiat vero illum.
+        </div>
+      </section>
+    </article>
+    <h2>Funciones en css</h2>
+    <h3>Funcion var()</h3>
+    <p>
+      se declara una funcion anteponindo -- antes del nombre, ejemplo :
+      --border-color: red
+    </p>
+    <p>se ejecuta la cuncion con var : border: thin slid var(--border-color)</p>
+    <span>ver mas explicion en el archivo variables-functions.css</span>
+    <h3>funcion url()</h3>
+    <p>
+      anterior mente se menciono otra forma importar una hoja de estilos con
+      <strong>@import url("/")</strong>, esto es una mala practica
+    </p>
+    <p>
+      la funcion <strong>url</strong>, es como el atributo
+      <strong>src</strong> de las imagenes, donde se tiene que poner la
+      direccion del archivo, pero tambien va a servir para llamar archivos
+      tipograficos o imagenes de fondo (va a servir para llamar a cargar
+      contenido externo)
+    </p>
+    <h3>Funcion calc()</h3>
+    <p>sirve para hacer calculos aritmeticos</p>
+    <div class="ch">1234567890</div>
+    <p>aplicanco calculo , para completar</p>
+    <div class="ch-10">1234567890</div>
+    <h3>Funcion min() & max()</h3>
+    <p>
+      son funciones que se les pueden dar diferentes valores separados por comas
+      y va tomar el valor minimo o maximo dependiendo de la funcion que se este
+      usando
+    </p>
+    <div class="min-max">Funciones min() & max()</div>
+    <h3>Funcion clamp()</h3>
+    <p>
+      Es una funcion que va a recivir 3 valores: tamaño minimo, tamaño ideal,
+      tamaño maximo
+    </p>
+    <p>tambien permite hacer calculos dentro de los parametros</p>
+    <a href="index.html">🤟</a>
+  </body>
+</html>

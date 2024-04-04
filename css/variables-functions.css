@@ -1,0 +1,78 @@
+html {
+  background-color: antiquewhite;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit; /*box-sizing heredado*/
+}
+/* ? para que las variables sean glovales (se puedan utlizar en todo el documento), se declara en la etiqueta html, en este caso se declarará en la pseudo clase root(raíz) */
+
+/* * la pseuso clase root, hace referencia a la etiqueta html , pero esta tiene más espesificidad (más peso) */
+:root {
+  --default-backgroud-color: skyblue;
+}
+
+/* en css se declaran las variables  con 2 giones "--" */
+/* las variables se pueden heredar a los elementos hijis , son como las variables de bloque en js(solo funcionan en su ambito)
+en este caso del padre a todo lo que tenga dentro,pero afuera no funciona */
+.custom-props-1 {
+  --primary-color: gray;
+  --font-zise: 32px;
+  /*con la palabra reservada var() es como se usa una varible*/
+  background-color: var(--primary-color);
+}
+
+.custom-props-2 {
+  background-color: var(--default-backgroud-color);
+  border: thin solid var(--border-color);
+  padding: 1rem;
+}
+
+.custom-props-3 {
+  font-size: var(--font-zise);
+  border: thin solid var(--border-color);
+}
+
+/* aqui se pretende usar una varible que a sido declarada en la clase custom-props-1, como esta clase no esta destro de custom....-1 , no va aplicar el estilo */
+/* var recibe 2 propiedade, una la varible , y otra que se puede poner por defecto sin no llega a plicar la primera */
+.title-props {
+  --font-size: 30px;
+  color: var(--primary-color, navy);
+  font-size: var(--font-size);
+  background-color: var(--default-backgroud-color);
+}
+
+/* todo calc() */
+.ch {
+  background-color: var(--default-backgroud-color);
+  font-size: 2rem;
+  width: 10ch;
+  padding: 2ch;
+}
+.ch-10 {
+  --padding-size: 2ch;
+  --num-ch: 10ch;
+  background-color: var(--default-backgroud-color);
+  font-size: 2rem;
+  padding: var(--padding-size);
+  /* hay que tener cuidado con los espacios , 10 + 2; espaciado funciona; 10+2 , no funciona  */
+  /* width: calc(10ch + 2ch * 2); */
+  width: calc(var(--num-ch) + var(--padding-size) * 2);
+}
+/* todo min() & max() */
+
+.min-max {
+  background-color: var(--default-backgroud-color);
+  margin-top: 1rem;
+  width: min(300px, 20vw); /*que tome el minimo valor*/
+  height: max(200px, 25vh); /*que tome el maximo valor */
+}
+
+/* todo clamp() */
+
+h1 {
+  font-size: clamp(2rem, 1rem + 3vw, 3rem);
+}
