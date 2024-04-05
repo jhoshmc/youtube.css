@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bordes y Outlines</title>
+    <link rel="stylesheet" href="css/border-outline.css" />
+  </head>
+  <body>
+    <h1>Bordes y Outlines</h1>
+    <h3>border-radius</h3>
+    <p>Es un short hand para 4 propiedades, que son los 4 lados</p>
+    <p>tambien se puede hacer solo uno de los lados , como ejemplo</p>
+    <div class="box border-radius"></div>
+    <ul>
+      <li>border-top-left-radius - esquina superiror izquierda</li>
+      <li>border-top-right-radius - esquina superiror derecha</li>
+      <li>border-bottom-left-radius esquina inferior izquierda</li>
+      <li>border-bottom-right-radius - esquina inferior derecha</li>
+    </ul>
+    <div class="border-contenedor">
+      <div class="box border-top-left"></div>
+      <div class="box border-top-right"></div>
+      <div class="box border-bottom-left"></div>
+      <div class="box border-bottom-right"></div>
+    </div>
+    <p>
+      se pueden aplicar a 2 valores: <br />
+      las diagonales de la esquina superior izquierda y la esquina inferior
+      deracha son el primer valor y <br />
+      las diagonales de la esquina superior derecha y esquina inferior izquierd
+      son el segundo valor
+    </p>
+    <div class="box border-2-valores"></div>
+    <p>
+      a 3 valores:
+      <br />
+      la ezquina superior izquierda es el primer valor <br />
+      las diagonales de la esquins superior derecha y esquina inferior izquierda
+      son el segundo valor <br />
+      la esquina inferior derecha es el tercer valor
+    </p>
+    <div class="box border-3-valores"></div>
+    <p>
+      a 4 valores va como la manesillas de un reloj: <br />
+      esquina superior izquierda - primer valor <br />
+      esquina superior derecha - segundo valor <br />
+      esquina inferior derecha - tercer valor <br />
+      esquina inferior izquierda - cuarto valor
+    </p>
+    <div class="box border-4-valores"></div>
+    <h3>bordes elipticos</h3>
+    <p>
+      para hacer una elipce se pone 2 meditas y un / entre ellas , ejemplo:
+      border-radius: 2rem / 4rem <br />
+      valores de radius en x / valores de radius en y
+    </p>
+    <p>
+      ver mas info en:
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"
+        target="_blank"
+        >mdn</a
+      >
+    </p>
+    <div class="box border-eliptico"></div>
+    <p>a 2 valores elipticos</p>
+    <p>border-radius: 2rem 4rem / 4rem 8rem;</p>
+    <div class="box border-eliptico-2"></div>
+    <p>redondear a circunferencia</p>
+    <p>esta si o se tine que ser una caja cuadrada, igual en ancho y alto</p>
+    <p>border-radius: 50%;</p>
+    <div class="box border-circunferencia"></div>
+    <h2>Outlines</h2>
+    <p>
+      Es un borde externo que no va a interrumpir con el espacio que tinen los
+      demas elementos , todo lo contrario del border, que si interrumpe
+    </p>
+    <div class="box outline">Outline</div>
+    <br />
+    <div style="text-align: center">
+      <input type="text" />
+    </div>
+    <a href="index.html">🤟</a>
+  </body>
+</html>

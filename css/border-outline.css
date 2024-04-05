@@ -1,0 +1,107 @@
+html {
+  background-color: bisque;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* todo border-radius */
+.box {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  border: thick solid red;
+}
+.border-radius {
+  width: 300px;
+  height: 300px;
+  border-radius: 2rem;
+}
+.border-contenedor {
+  --border-r: 2rem;
+  display: flex;
+  margin-top: 2rem;
+}
+.border-contenedor > div {
+  width: 100px;
+  height: 100px;
+}
+
+.border-top-left {
+  border-top-left-radius: var(--border-r);
+}
+
+.border-top-right {
+  border-top-right-radius: var(--border-r);
+}
+
+.border-bottom-left {
+  border-bottom-left-radius: var(--border-r);
+}
+
+.border-bottom-right {
+  border-bottom-right-radius: var(--border-r);
+}
+
+.border-2-valores,
+.border-3-valores,
+.border-4-valores {
+  width: 200px;
+  height: 200px;
+}
+
+.border-2-valores {
+  /** a 2 valores:
+  las diagonales de la esquina superior izquierda y la esquina inferior deracha son el primer valor y
+  las diagonales de la esquina superior derecha y esquina inferior izquierd son el segundo valor
+   */
+  border-radius: 2rem 4rem;
+}
+
+.border-3-valores {
+  /** a 3 valores:
+  la ezquina superior izquierda es el primer valor
+  las diagonales de la esquins superior derecha y esquina inferior izquierda son el segundo valor
+  la esquina inferior derecha es el tercer valor */
+  border-radius: 2rem 4rem 0;
+}
+
+.border-4-valores {
+  /**  a 4 valores va como la manesillas de un reloj:
+  esquina superior izquierda - primer valor
+  esquina superior derecha - segundo valor
+  esquina inferior derecha - tercer valor
+  esquina inferior izquierda - cuarto valor */
+  border-radius: 4rem 3rem 2rem 1rem;
+}
+.border-eliptico,
+.border-eliptico-2,
+.border-circunferencia {
+  width: 300px;
+  height: 300px;
+}
+
+.border-eliptico {
+  border-radius: 2rem / 4rem;
+}
+
+.border-eliptico-2 {
+  border-radius: 2rem 4rem / 4rem 8rem;
+}
+
+.border-circunferencia {
+  border-radius: 50%;
+}
+/* todo Outline */
+.outline {
+  width: 300px;
+  height: 300px;
+  color: white;
+  text-align: center;
+  outline-width: 5px;
+  outline-style: dashed;
+  outline-color: chartreuse;
+  /* tambien se puede acortar como en border */
+  outline: thick solid blue;
+  /* distancia que se aleje de la caja, en negativo se contrae */
+  outline-offset: 3rem;
+  outline-offset: -3rem;
+}
