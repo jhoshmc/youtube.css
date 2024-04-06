@@ -1,0 +1,36 @@
+html {
+  background-color: bisque;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* para lograr que una imagen sea responsiva, es una vuena practica aplicar como estilo de reseteo a tus imagenes la pripiedad max-width:100%, la altura en automatico */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  border: medium solid black;
+  width: 400px;
+  height: 400px;
+}
+
+.card img {
+  height: 300px;
+  /** para que la imagen no se deforme */
+  /* rellenar, valor por defecto */
+  object-fit: fill;
+  /* contine */
+  object-fit: contain;
+  /* no adaptar el taño o composicion */
+  object-fit: none;
+  /* recorta */
+  object-fit: cover;
+  /* es un valor dinamico
+  toma el valor que sea menor de los valores contain y none
+   */
+  object-fit: scale-down;
+  /* para posicionar la imagen , esto esta en backgrounds , anlace anterior */
+  object-position: left top;
+  object-position: 50% 50%;
+}
