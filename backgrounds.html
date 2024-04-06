@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fondos en css</title>
+    <link rel="stylesheet" href="css/backgrounds.css" />
+  </head>
+  <body>
+    <h1>Fondos en CSS</h1>
+    <section class="informacion">
+      <h4>background-color</h4>
+      <p>Define el color del fondo del elemento</p>
+      <h4>background-image</h4>
+      <p>define la imagen de fondo del elemento</p>
+      <h4>background-repeat</h4>
+      <p>Define como se repite la imagen de fondo del elemento</p>
+      <h4>background-size</h4>
+      <p>
+        define el tamaño de de la imagen de fondo, primer valor X y segundo Y
+      </p>
+      <ul>
+        <li>
+          cover - cambia el tamaño de la imagen de fondo para asegurarse de que
+          permanesca completamente vicible
+        </li>
+        <li>
+          contain - cambia el tamaño de la imagen de fondo para asegurarse de
+          que el elemento esté completamente cubierto
+        </li>
+      </ul>
+      <h4>background-position</h4>
+      <p>
+        define la posicion de la imagen de fondo, primer valor X, segndo valor
+        Y, si no se especifica un segundo valor, este cera CENTER.
+      </p>
+      <p>
+        aparte de valores numéricos podemos el posicionamiento con las palabras:
+        center, top, bottom, lefth, right
+      </p>
+      <h4>backgorund-clip</h4>
+      <p>Define cuanto deve extenderse el fondo dentro del elemento.</p>
+      <h4>background-origin</h4>
+      <p>Define el origen de la imagen de fondo</p>
+      <h4>background-attachment</h4>
+      <p>
+        Define como se comportará la imagen de fondo al despalazarse por la
+        página
+      </p>
+    </section>
+    <p>background-color</p>
+    <div class="box bg-color"></div>
+    <p>background-image</p>
+    <div class="box bg-image"></div>
+    <p>background-size</p>
+    <p>medidas, cover, contain</p>
+    <p>
+      ver informacion y ejemplos en
+      <a
+        href="https://cssreference.io/property/background-size/"
+        target="_blank"
+        >css reference</a
+      >
+    </p>
+    <div class="contenedor-bg-size">
+      <div class="box bg-size"></div>
+      <div class="box bg-size-cover"></div>
+      <div class="box bg-size-contain"></div>
+    </div>
+    <p>background-repeat</p>
+    <p>
+      ver mas info en
+      <a
+        href="https://cssreference.io/property/background-repeat/"
+        target="_blank"
+        >css reference</a
+      >
+    </p>
+    <div class="box bg-repeat"></div>
+    <p>background-position</p>
+    <div class="box bg-position"></div>
+    <p>backgorund-clip</p>
+    <p>esta propiedad afecta al fondo</p>
+    <div class="box bg-clip"></div>
+    <p>background-origin</p>
+    <p>esta propiedad afecta a la imagen</p>
+    <div class="box bg-origin"></div>
+    <p>background-attachment</p>
+    <div class="box bg-attachment"></div>
+    <p>fondos multiples</p>
+    <div class="box bg-multiple"></div>
+    <div class="box bg-art"></div>
+    <a href="index.html">🤟</a>
+  </body>
+</html>
