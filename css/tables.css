@@ -1,0 +1,24 @@
+html {
+  background-color: bisque;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.table {
+  font-size: 3rem;
+  /* para que la tabla solo tenga un borde */
+  border-collapse: separate; /*valor por defecto*/
+  border-collapse: collapse;
+  border-collapse: separate;
+  /* desar de mostar un celda vacia , si tine borde-collpse , tiene que estar en separate */
+  empty-cells: show; /*valor por defecto*/
+  empty-cells: hide;
+}
+
+/* agregar borde a las etiquetas de la tabla  */
+table,
+th,
+td {
+  border: medium solid black;
+  /* separacion entre seldas, esta solo funcionara si el valor de border-collapse es separate o no tine border-collapse */
+  border-spacing: 1rem;
+}
