@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!-- para poner tema oscuro, no es la mejor manera, pero funciona -->
+<html lang="es">
+  <!--class="dark-mode", esto va dentro de la etiqueta html-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efectos visuales en Css</title>
+    <link rel="stylesheet" href="css/visual-effects.css" />
+  </head>
+  <body>
+    <h1>Efectos visuales en Css</h1>
+    <hr />
+    <h2>sombras</h2>
+    <p>
+      se tiene 3 tipos de sombras, sombra a la caja, sombra al texto y un filtro
+      de nombre drop-shadow
+    </p>
+    <div class="box shadows">
+      <p>Sombras</p>
+    </div>
+    <p>sombras multiples</p>
+    <div class="box shadows-multiple">
+      <p>Sombras</p>
+    </div>
+    <p>drop-shadow</p>
+    <p>
+      este va a aplicar las sombras a las imagenes que tengan transparencia
+      alpha
+    </p>
+    <div class="box drop-shadow">
+      <img src="assets/arbol.png" alt="niño y árbol" />
+    </div>
+    <hr />
+    <h2>Degradados</h2>
+    <p>hay 3 tipos de degradados:</p>
+    <!-- (h3+.box)*3 otra forma de poner 3 h3 y 3 divs con la clase box más rapido -->
+    <p>sacar un degradado fast</p>
+    <p>
+      gradient-generator:
+      <a href="https://cssgradient.io/" target="_blank">link</a>
+    </p>
+    <p>
+      colorzilla gradient-generator
+      <a href="https://www.colorzilla.com/gradient-editor/" target="_blank"
+        >Link</a
+      >
+    </p>
+    <h3>Lineal</h3>
+    <div class="box linear-gradient"></div>
+    <h3>Radial</h3>
+    <div class="box radial-gradient"></div>
+    <h3>Cónicos</h3>
+    <div class="box conic-gradient"></div>
+    <h3>Repetir degradados</h3>
+    <p>patrones con degradados</p>
+    <div class="box repeat-gradient-linear"></div>
+    <div class="box repeat-gradient-radial"></div>
+    <div class="box repeat-gradient-conic"></div>
+    <h3>Graficas con degradados</h3>
+    <div class="box chart-gradient"></div>
+    <div class="box donut-gradient"></div>
+    <hr />
+    <h2>filtros</h2>
+    <h3>filter</h3>
+    <article class="card">
+      <img class="filter" src="assets/puesta-sol.jpg" alt="puesta de sol" />
+    </article>
+    <h3>Filtros múltiples</h3>
+    <article class="card">
+      <img
+        class="filters-multiples"
+        src="assets/puesta-sol.jpg"
+        alt="puesta de sol"
+      />
+    </article>
+    <h3>Filtros a fondos</h3>
+    <p>usando la propiedad backdrop-filter</p>
+    <article class="card relative">
+      <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      <div class="backdrop-filter">
+        <h4>puesta de sol</h4>
+      </div>
+    </article>
+    <article class="card relative">
+      <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      <div class="backdrop-filter-multiple">
+        <h4>puesta de sol</h4>
+      </div>
+    </article>
+    <h3>Filtros múltiples a fondos</h3>
+    <article class="card">
+      <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+    </article>
+    <h2>Modos de mezcla</h2>
+    <h3>Sobre imagen (img)</h3>
+    <p>super poner una imagen sobre otra</p>
+    <p>
+      los efectos de blend-mode, se deven aplicar a las imagenes, no al
+      contenedor
+    </p>
+    <article class="card relative blend-modes">
+      <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      <img class="absolute" src="assets/BuenosDias.jpg" alt="buenos dias" />
+    </article>
+    <h3>Sobre imagenes de fondo (background-image)</h3>
+    <article class="card bg-blend-modes"></article>
+    <hr />
+    <h2>Mascaras</h2>
+    <p>
+      enmascaramiento con figuras geometricas, esatas empiezan desde el centro
+    </p>
+    <p>
+      generador de coordenadas
+      <a href="https://bennettfeely.com/clippy/" target="_blank"
+        >clip-path generator</a
+      >
+    </p>
+    <article class="card clip-path">
+      <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+    </article>
+    <hr />
+    <h2>formas</h2>
+    <p>
+      que los textos tomen una respectiva silueta con respecto a la figura de la
+      imagen
+    </p>
+    <article class="shapes">
+      <h3>Ejemplos de Formas y Siluetas entre textos e imágenes</h3>
+      <img
+        src="assets/puesta-sol.jpg"
+        alt="puesta de sol"
+        class="float-left shape-1"
+      />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <img
+        src="assets/puesta-sol.jpg"
+        alt="puesta de sol"
+        class="floar-right shape-2"
+      />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <img
+        src="assets/puesta-sol.jpg"
+        alt="puesta de sol"
+        class="float-left shape-3"
+      />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vitae hic
+        libero doloribus eum quo exercitationem incidunt, corporis optio
+        obcaecati quidem mollitia, vel facere et esse quis laborum fugiat omnis!
+      </p>
+    </article>
+
+    <a href="index.html">🤟</a>
+  </body>
+</html>
