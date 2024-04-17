@@ -1,0 +1,408 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+.box {
+  border: thick solid #000;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+.card {
+  border: thick solid #000;
+  width: 600px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+/*todo transiciones */
+/*
+? transition-property
+? transition-duration
+linear(lineal), ease(aceleracion), ease-in(aceleracion al principio), ease-out(aceleracion al final)
+? transition-timing-function:none linear ease ease-in ease-out ease-in-out steps
+tiempo de espera antes que inicie la transicion
+? transition-delay
+shordhand
+? transition: property duration timing-function delay
+ */
+.transitions .box {
+  background-color: magenta;
+  border-color: green;
+  /* que propiedad quiero midificar */
+  transition-property: background-color;
+  transition-duration: 500ms; /*500 mili segundos*/
+  transition-timing-function: ease; /*aceletacion general*/
+  transition-delay: 0.5s;
+  /* shordhand, si no quieres poner delay, lo omites */
+  transition: border-color 2s linear 1s;
+  /* aplicar todas las animaciones y no se pierdan por cascada
+  *nota: si se usa mucho, ejemplo unas 10 transiciones a un mismo elemento en un mismo estado, esto puede afectar al rendimiento */
+  /** all tine un detalley es que todos los canvios se van a hacer en la misma cantidad de tiempo, no se puede poner tiempos distintos por transicion */
+  /* a la hora de usar all, todas las propiedades se van a estar animando y no solo las que se quiere */
+  /* transition: all 2s ease-in-out 250ms; */
+  /* en ves de all, poner las trancicines separados por comas */
+  transition: background-color 2s ease-in-out 250ms,
+    border-color 2s ease-in-out 250ms, border-radius 2s ease-in-out 250ms;
+  /* como poder controlar que prpiedad tenga su propio tiempo y su porpia funcion de transicion */
+}
+
+.transitions .box:hover {
+  background-color: cyan;
+  border-color: red;
+  border-radius: 2rem;
+  /* hay porpiedades que no son animables */
+  /* border-style: dashed; */
+}
+
+/* ?tranciciones múltiples */
+
+.transitions .card {
+  /* ir mostrando trancicion por trancicion  */
+  /* estos se van separando por comas */
+  /* steps(): pasasos , y a dentro se pone la cantidad de pasos a dar(tiempos) */
+  transition: opacity 1s ease-out, border-color 3s steps(5),
+    box-shadow 1.5s linear 2s;
+}
+
+.transitions .card:hover {
+  opacity: 0.75;
+  border-color: orchid;
+  filter: blur(0.15rem);
+  box-shadow: 1rem 1rem 2rem 0.5rem #000;
+}
+
+.transitions .card img {
+  transition: object-position 2s ease-in-out 3s;
+}
+
+.transitions .card img:hover {
+  object-position: 100% 50%;
+}
+
+/* todo Transformaciones */
+/* ? Transformaciones en 2D */
+.transforms-2d img {
+  transition: transform 2s ease-in-out;
+}
+
+.transforms-2d img:hover {
+  transform: none; /*valor por default*/
+  /* ?traslacion */
+  transform: translateX(4rem);
+  transform: translateY(4rem);
+  transform: translateY(-4rem);
+  /* shordhand, traslacion en X, traslacion en Y */
+  transform: translate(-4rem, 4rem);
+  /* se va a mover al porcentaje de la caja, en este caso su contedor */
+  transform: translate(50%, 50%);
+  transform: translate(-50%, -50%);
+  /* se pueden combinar medidad */
+  transform: translate(-50%, -200px);
+  /* ?Escalar */
+  transform: scaleX(2);
+  transform: scaleY(0.5);
+  /* shordhand, eslaca en X, escala en Y */
+  transform: scale(1.5, 1.5);
+  /* escala en negativo, signifa que se va rotar a la inversa (se va a poner de cabeza)*/
+  transform: scale(-1, -1);
+  /* ? Rotacion */
+  /*la rotaicon en X y en Y necesitan perspectiva, algo de 3d*/
+  transform: rotateX(60deg);
+  transform: rotateX(90deg);
+  transform: rotateY(60deg);
+  transform: rotateY(90deg);
+  /* en z va al sentido de las manesillas del reloj */
+  transform: rotateZ(60deg);
+  transform: rotateZ(-60deg);
+  /* shorthand rotate, solo aplicará rotate en Z */
+  transform: rotate(360deg);
+  /*? Skew */
+  transform: skewX(20deg);
+  transform: skewX(-20deg);
+  transform: skewY(20deg);
+  transform: skewY(-20deg);
+  /* shorthand skew(): primer valor para X, segundo valor para Y */
+  transform: skew(20deg, 20deg);
+  /* ?matrix */
+  /* matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
+  https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix */
+  transform: matrix(1, 2, 2, 1, 20, 10);
+
+  /* ? Transformaciones múltiples  */
+  /* se separan por espacios en blanco */
+
+  transform: translate(25%, -50%) rotate(240deg) skew(10deg, 20deg)
+    scale(-0.5, -0.5);
+}
+
+/* ? Transformaciones en 3d */
+/* link a mdn sobre 3d:
+*traslate:
+*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d
+*scale:
+*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale3d
+*Rotate:
+*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale3d
+*matrix:
+*https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d */
+
+/* * otra manera de aplicar la perspectiva, es palicandosela al elemento padre de donde queremos la perspectiva */
+.transforms-3d {
+  perspective: 10rem;
+}
+.transforms-3d img {
+  transition: transform 2s ease-in-out;
+}
+
+.transforms-3d img:hover {
+  transform: translateZ(4rem);
+  /* activando perspectiva
+  *nota: mientras mayor sea el tamaño de la perspectiva, mas lento es el efecto */
+  transform: perspective(1000px) translateZ(4rem);
+  transform: perspective(100rem) translateZ(4rem);
+  transform: perspective(10rem) translateZ(4rem);
+  transform: perspective(1rem) translateZ(4rem);
+  transform: perspective(10rem) translateZ(-4rem);
+  /* ya aplicada la perspectiva en el elemento padre */
+  transform: translateZ(-4rem);
+  /* ? traslacion */
+  /* traslate(valor en X, valor en Y, valor en Z(profundidad)) */
+  transform: translate3d(2rem, 50%, -3rem);
+  /* ? Escala */
+  /* para esto se necesita volumen , aca no hay :c */
+  transform: scaleY(1.5);
+  /* shordhand , primer valor X, segundo valor Y, tercer valor Z */
+  transform: scale3d(2, 0.5, 3);
+  /* ? Rotacion */
+  transform: rotateX(60deg);
+  transform: rotateX(90deg);
+  transform: rotateY(60deg);
+  transform: rotateY(-90deg);
+  /* shorthad rotate3d(): hay que dar 3 valores númericos que hacen referencia a nodos vectoriales en cada uno de los ejes de la perspectiva 3d X, Y, Z, un angulo de inclinación */
+  transform: rotate3d(1, 1, 1, 45deg);
+
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 6, 0, 0, 0, 1, 0, 50, 100, 0, 1.1);
+  /* ? transformaciones múltiples */
+  transform: rotate3d(-1, 2.25, -2, 60deg) translate3d(2rem, 50%, -3rem)
+    scale3d(2, 0.5, 3);
+}
+
+/* ? Origen de la transformacion */
+
+.transforms-origin img {
+  transition: transform 2s ease-in-out;
+  /* transform-origin: x y z */
+  transform-origin: 50% 50% 0;
+  /* se pueden dar valores númricos: el primero para X y el segundo para Y */
+  transform-origin: 0 0;
+  /* cuando se aplica un solo valor , en 2 dimenciones toma el valor de y en 50% y en 3 dimenciones lo toma en 0 */
+  transform-origin: 0;
+  /* tambien serve con palabras clave */
+  transform-origin: top left;
+  transform-origin: bottom right;
+  transform-origin: top center;
+  transform-origin: center center;
+  transform-origin: -3rem -3rem;
+  transform-origin: 2rem 75%;
+  transform-origin: 25% 75%;
+  transform-origin: 30% 90%;
+}
+
+.transforms-origin img:hover {
+  transform: rotate(360deg);
+}
+
+/* ? flip cards */
+
+.flip-card-1,
+.flip-card-2 {
+  border: thick solid #000;
+  width: 600px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  /* para que las caras se posiciones con el absolute */
+  position: relative;
+  /* para que ul usuario sepa que es un elemento interactivo */
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
+  perspective: 10rem;
+  /* * va a establecer si los hijos de un elemento que tiene perspectiva en 3D , determinará como es que se van a comportar en el espacio 3D */
+  /* valor por defecto: que se trabajen los elementos hijos sobre el mismo plano */
+  transform-style: flat;
+  /* que los hijos tengan su propia perspectiva adicional a la del padre */
+  transform-style: preserve-3d;
+}
+
+.flip-card-2 {
+  transform-origin: center right;
+}
+
+.flip-card-1:hover {
+  transform: rotateY(180deg);
+}
+.flip-card-2:hover {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flip-card-1 img,
+.flip-card-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+.flip-face {
+  /*para que funcione, tiene que econtrar un padre pon posicion relativa, si no tomara como padre al body  */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /** determina como es que se van a visualizar esas caras  */
+  backface-visibility: visible; /*valor por defecto*/
+  /* esto funciona si tiene perspectiva */
+  backface-visibility: hidden;
+}
+
+/* que roten las cartas */
+.flip-front {
+  transform: rotateY(0deg);
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* todo Animaciones */
+/* regla de timepo de una animacion */
+
+@keyframes myAwesomeAnimation {
+  /** definir fotograma de inicio */
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  /* definir fotograma de cierre */
+  to {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+.my-animation {
+  /** animation: nombre, durcion, tiempo de funcion, delay(retraso), cuantas veces see va a iterar la a nimacion, direccion de la animacion, fill-mode, define el estado de la animacion: tinene 2 valore; runing(corriendo) y pausado */
+  /* *los valores que son obligados a usar son name y duration , el resto es opcional */
+  /*? animation: name duration timing-function delay iteration-count direction fill-mode play-state; */
+  /* nombre que quieras ponerle a la animacion */
+  animation-name: myAwesomeAnimation;
+  animation-duration: 3s;
+  animation-duration: 2s;
+  /* riming-function cubic-bezier: 
+  https://cubic-bezier.com/#.17,.67,.83,.67 */
+
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-timing-function: cubic-bezier(33, 92, 92, 36);
+  animation-timing-function: ease-in-out;
+  /* animation-delay: 1500ms; */
+  animation-delay: 0;
+  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-direction: reverse;
+  animation-direction: alternate;
+  animation-direction: alternate-reverse;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  /* Al final de la animacion se queda con los estilos finales de la animación */
+  animation-fill-mode: forwards;
+  /* Al inicio de la animacion se queda con los estilos niniciales de la animacion */
+  animation-fill-mode: backwards;
+  /* aplica al mismo tiempo el valor de forwards y backwards */
+  animation-fill-mode: both;
+  /* * propiedad que no tiene senido que se use solo con css, si no que se controle con javaScript */
+  animation-play-state: paused; /*que se pause*/
+  animation-play-state: running; /*que corra*/
+  /* shorthand */
+  animation: myAwesomeAnimation 1.5s ease 250ms 7 alternate both running;
+}
+
+/* animaicones con linea de tiempo y fotrogramas clave */
+/* en css la linea de tiempo funciona por porcentajes */
+@keyframes myAwesomeAnimation2 {
+  /* fotograma inicial */
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  /* fotograma clave o intermedio */
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%);
+  }
+  75% {
+    transform: translateX(-75%);
+  }
+  /* fotograma final */
+  100% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+.my-animation-2 {
+  /* animation-name: myAwesomeAnimation2;
+  animation-duration: 2s; */
+  animation: myAwesomeAnimation2 2s;
+}
+
+/* ? animaciones múltiples */
+@keyframes multipleAnimation1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes multipleAnimation2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* para poner animaciones múltiples, se  separan por comas */
+.animation-multiple {
+  animation: multipleAnimation1 2s infinite;
+  animation: multipleAnimation2 2s infinite;
+  animation: multipleAnimation1 2s infinite, multipleAnimation2 1s 3 ease-in-out;
+}

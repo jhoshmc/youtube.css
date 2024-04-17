@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movimientos en CSS</title>
+    <link rel="stylesheet" href="css/motion.css" />
+  </head>
+  <body>
+    <h1>Movimientos en CSS</h1>
+    <p>
+      lista con propiedades que son animables
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties"
+        target="_blank"
+        >mdn</a
+      >
+    </p>
+    <hr />
+    <section class="transitions">
+      <h2>Transiciones</h2>
+      <p>
+        <strong>nota:</strong> cuando se declara una propiedad en la lista de
+        trasiciones que se va a ejecutar, esa transicion no solo se va a dar en
+        el cambio en el estado que se haya definido, si que tambien a la hora
+        que se carga la propiedad en el navegador ver explicacion en
+        <a
+          href="https://www.youtube.com/watch?v=mVhoGXkDbMw&t=17921s"
+          target="_blank"
+          >jonmircha</a
+        >
+        tiempo: 5:08:30
+      </p>
+      <p>ease - acelera</p>
+      <p>lineal - se mantiene uniforme</p>
+      <p>ease-in - empieza acelerando al principio y luego lineal</p>
+      <p>ease-out - primero empieza lineal y luego acelera al final</p>
+      <p>
+        ease-in-out - acelera al principio y al final y en medio se mantiene
+        lineal
+      </p>
+      <div class="box"></div>
+      <article class="card">
+        <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      </article>
+    </section>
+    <hr />
+    <section class="transforms">
+      <h2>Transformaciones</h2>
+      <h3>Transformaciones en 2D</h3>
+      <p>hay 4 Movimientos en 2d:</p>
+      <p>traslacion en X y traslacion en Y (movimiento)</p>
+      <p>Rotacion</p>
+      <p>Escala,</p>
+      <p>
+        skew (sesgar) - deformar mediante las lineas perpendiculares y paralelas
+        del objeto
+      </p>
+      <article class="card transforms-2d">
+        <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      </article>
+      <h3>Transformaciones en 3D</h3>
+      <article class="card transforms-3d">
+        <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      </article>
+      <h3>Origen de la transformacion</h3>
+      <article class="card transforms-origin">
+        <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      </article>
+      <h3>Flip Cards</h3>
+      <article class="flip-card-1">
+        <div class="flip-face flip-front">
+          <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+        </div>
+        <div class="flip-face flip-back">
+          <img src="assets/BuenosDias.jpg" alt="Buenos días" />
+        </div>
+      </article>
+      <article class="flip-card-2">
+        <div class="flip-face flip-front">
+          <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+        </div>
+        <div class="flip-face flip-back">
+          <img src="assets/BuenosDias.jpg" alt="Buenos días" />
+        </div>
+      </article>
+    </section>
+
+    <hr />
+    <section class="animations">
+      <h2>Animaciones</h2>
+      <article class="card my-animation">
+        <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      </article>
+      <article class="card my-animation-2">
+        <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      </article>
+      <h3>animaciones múltiples</h3>
+      <article class="card animation-multiple">
+        <img src="assets/puesta-sol.jpg" alt="puesta de sol" />
+      </article>
+    </section>
+    <a href="index.html">🤟</a>
+  </body>
+</html>
