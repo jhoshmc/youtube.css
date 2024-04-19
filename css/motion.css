@@ -3,11 +3,15 @@ html {
   font-family: sans-serif;
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 *,
 *::after,
 *::before {
   box-sizing: inherit;
+}
+body {
+  margin: 0;
 }
 .box {
   border: thick solid #000;
@@ -405,4 +409,497 @@ shordhand
   animation: multipleAnimation1 2s infinite;
   animation: multipleAnimation2 2s infinite;
   animation: multipleAnimation1 2s infinite, multipleAnimation2 1s 3 ease-in-out;
+}
+
+/* todo Ejemplos de efectos de moviento */
+.motion-examples {
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  font-size: 5vw;
+  animation: fadeIn 2s linear 2s infinite alternate both;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  font-size: 5vw;
+  animation: fadeOut 2s linear 2s infinite alternate both;
+}
+
+@keyframes shake {
+  /* para que varios frames tomen el mismo valor, tambien se pueden agrupar como selectores de css */
+
+  10%,
+  90% {
+    transform: translate(-1px, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate(2px, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate(-4px, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate(4px, 0);
+  }
+}
+
+.shake {
+  font-size: 5vw;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.shake:hover {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate(0, 0);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  font-size: 5vw;
+  animation: pulse 1s linear infinite;
+}
+@keyframes heartColor {
+  10% {
+    background-color: #d00;
+  }
+}
+/* ? corazón */
+
+.heart {
+  position: relative;
+  margin: 0 auto;
+  width: 10vw;
+  height: 10vw;
+  animation: pulse 1s infinite;
+}
+
+.heart::after,
+.heart::before {
+  position: absolute;
+  content: "";
+  left: 5vw;
+  top: 0;
+  width: 5vw;
+  height: 8vw;
+  background-color: #a00;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  border-radius: 5vw 5vw 0 0;
+  animation: heartColor 1s infinite;
+}
+
+.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* ? spinner */
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  /* background-color: #d00; */
+  width: 5vw;
+  height: 5vw;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 0.5vw solid rgba(0, 0, 0, 0.1);
+  border-left-color: #09f;
+  animation: spinner 1s ease-in-out infinite;
+}
+
+/* ?boton */
+/* como se va a usar los pseudo elementos ::after y ::before, por eso se necesita que tenga posicionamiento relativo */
+
+/* definir estilos del boton */
+.btn {
+  position: relative;
+  border: none;
+  padding: 0.2rem;
+  width: 15rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0.25rem 0.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.15);
+}
+
+/* formar línea y transiciones */
+.anim-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  /* un 10% de la altura original (2.5rem) */
+  height: 0.25rem;
+  background-color: #d00;
+  transition: width 0.5s ease, left 0.5s ease, right 0.5s ease;
+}
+
+/* orientacion de animacion(to-left , to-center, to-rigth)  */
+.anim-bottom:hover::after {
+  width: 100%;
+}
+
+.to-left::after {
+  left: 0;
+}
+
+.to-center::after {
+  left: 50%;
+}
+
+.to-center:hover::after {
+  left: 0;
+}
+
+.to-rigth::after {
+  right: 0;
+}
+
+/*? fondo con gradiente */
+
+.anim-bg-gradient {
+  background-image: linear-gradient(to right, pink, violet, orange, orangered);
+  background-size: 300% 100%;
+  transition: background-position 0.5s ease-in-out;
+}
+.anim-bg-gradient:hover {
+  background-position: 100% 0;
+}
+
+/* ?menú taps */
+
+.tabs-menu {
+  position: relative;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 70%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ddd;
+}
+
+.tabs-menu input[type="radio"] {
+  display: none;
+}
+
+.tabs-menu label {
+  position: relative;
+  z-index: 1;
+  /* calcular el ancho de forma proporcional */
+  /* calc(del 100% del ancho / secciones - padding) */
+  width: calc(100% / 4 - 0.5rem);
+  cursor: pointer;
+}
+
+.tabs-menu label:hover {
+  color: #fff;
+}
+
+/** cuando un input esté en su estado checked + quiero afectar a su etiqueta hermana(label) */
+
+.tabs-menu input[type="radio"]:checked + label {
+  color: #fff;
+}
+
+.tab-bg-hover {
+  position: absolute;
+  width: calc(100% / 4 - 0.5rem);
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(90deg, #a00, #d00);
+  transition: transform 300ms ease-in-out;
+}
+
+#tab-1:checked ~ .tab-bg-hover {
+  transform: translateX(0);
+}
+
+#tab-2:checked ~ .tab-bg-hover {
+  transform: translateX(100%);
+}
+
+#tab-3:checked ~ .tab-bg-hover {
+  transform: translateX(200%);
+}
+
+#tab-4:checked ~ .tab-bg-hover {
+  transform: translateX(300%);
+}
+
+/* todo menú hamburguesa */
+
+.off-canvas-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 999;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  opacity: 0.25;
+  opacity: 0;
+}
+
+.off-canvas-burger {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 998;
+  width: 3rem;
+  /* hacer las lineas del menú hamurgesa */
+  height: 0.6rem;
+  background-color: #d00;
+  border-radius: 0.3rem;
+  /* transformar el origen para posterior mete hacer la X */
+  transform-origin: top left;
+  transform: rotate(0deg) translate(0, -1.2rem);
+  transition: transform 0.5s ease, background-color 500ms ease;
+}
+
+.off-canvas-burger::before,
+.off-canvas-burger::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.6rem;
+  background-color: #d00;
+  border-radius: 0.3rem;
+  transition: transform 500ms ease;
+}
+
+.off-canvas-burger::before {
+  transform: rotate(0deg) translate(0, -0.9rem);
+  background-color: blue;
+  background-color: #d00;
+}
+.off-canvas-burger::after {
+  transform: rotate(0deg) translate(0, 0.3rem);
+  background-color: green;
+  background-color: #d00;
+}
+
+/* + : hermanos adyacentes */
+.off-canvas-btn:checked + .off-canvas-burger {
+  background-color: transparent;
+}
+
+/* pasar el menú hamburgesa a X */
+
+.off-canvas-btn:checked + .off-canvas-burger::before {
+  transform: rotate(45deg) translate(0, 0);
+}
+
+.off-canvas-btn:checked + .off-canvas-burger::after {
+  transform: rotate(-45deg) translate(0.4rem, -0.5rem);
+}
+/** menú */
+
+.off-canvas-menu {
+  /*posicion fija*/
+  position: fixed;
+  /* estirar el contenedor */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0008;
+  transition: transform 500ms ease-in-out;
+  /* diereccion de por donde va a salir el menú */
+  /* de arriba hacia abajo */
+  transform: translate(0, -100%);
+  /* de abajo hacia arriba */
+  /* izquierda a derecha */
+  transform: translate(-100%, 0);
+
+  /* derecha a izquierda */
+  transform: translate(100%, 0);
+}
+/* para hacer ~ usa alt+126 */
+.off-canvas-btn:checked ~ .off-canvas-menu {
+  transform: translate(0, 0);
+}
+
+.off-canvas-menu-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.off-canvas-link {
+  border-bottom: thin solid #d00;
+  padding: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 300ms ease;
+}
+.off-canvas-link:first-child {
+  border-top: thin solid #d00;
+}
+
+.off-canvas-link:hover {
+  background-color: #d005;
+}
+
+/* todo Ventana Modal */
+
+.modal {
+  /*posicion fija*/
+  position: fixed;
+  /* estirar el contenedor */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0008;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease-in-out;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  position: relative;
+  border: thick double #d00;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 70%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  /* centrar X */
+  text-align: center;
+  line-height: 3rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #d00;
+  transition: background-color 300ms linear, trasnform 300ms ease-in-out;
+}
+
+.modal-close:hover {
+  background-color: #a00;
+  transform: scale(1.2);
+}
+
+/* todo Star wars */
+
+@keyframes introStarWars {
+  0% {
+    transform: perspective(100vh) rotateX(15deg) translateY(100%);
+  }
+
+  100% {
+    transform: perspective(100vh) rotateX(25deg) translateY(-200%);
+  }
+}
+
+.star-wars {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: #ffb13a;
+  background-image: url("../assets/stars.gif");
+}
+
+.star-wars-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+  animation: introStarWars 20s linear infinite;
+}
+
+.star-wars h2,
+.star-wars h3 {
+  font-size: 5vw;
+  text-align: center;
+}
+
+.star-wars p {
+  font-size: 3vw;
+  line-height: 4rem;
 }
