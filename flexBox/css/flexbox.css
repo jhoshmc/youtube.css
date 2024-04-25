@@ -1,0 +1,170 @@
+html {
+  box-sizing: border-box;
+  background-color: antiquewhite;
+  font-family: sans-serif;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+/* todo flex y inline-flex */
+.container,
+.container-1a {
+  margin: 1rem;
+  background-color: #333;
+}
+.container {
+  /* flex es una caja que trabaja en bloque*/
+  display: flex;
+}
+
+.container-1a {
+  /* inline-flex: los bloques se van a comportar como si estuvieran en linea */
+  display: inline-flex;
+}
+
+.item {
+  background-color: #666;
+  width: 20%;
+  height: 20%;
+  border: medium solid #999;
+}
+.item-1a {
+  background-color: #666;
+
+  border: medium solid #999;
+}
+.item-1a:nth-child(2),
+.item-1a:nth-child(17) {
+  font-size: 250%;
+}
+
+/* todo flex-direction */
+
+.container-direction {
+  margin: 1rem;
+  background-color: #333;
+  height: 30vh;
+
+  display: flex;
+  /* valor por defecto */
+  flex-direction: row;
+  flex-direction: row-reverse;
+  flex-direction: column;
+  flex-direction: row;
+  flex-direction: column-reverse;
+}
+
+/* todo flex-wrap */
+.flex-wrap {
+  /* va a tratar de alinear a todos sus hijos en una linea */
+  flex-wrap: nowrap;
+  /* va a generar filas dependiendo del tamaño de la caja, va a ir acomodando a sus hijos*/
+  flex-wrap: wrap;
+  /* inverte los valores a su inversa */
+  flex-wrap: wrap-reverse;
+}
+
+/* todo flujo de la caja, asi se le conoce a flex-direction y flex-wrap, estos tienen un shortcut en donde se convinan */
+
+.shortcut {
+  /* flex-flow: flex-direction flex-wrap */
+  flex-flow: column wrap;
+}
+
+.shortcut-1a {
+  /* flex-flow: flex-direction flex-wrap */
+  flex-flow: column-reverse wrap;
+}
+
+/* todo justify-content */
+
+.justify-content {
+  justify-content: flex-start;
+  justify-content: flex-end;
+  justify-content: center;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
+}
+
+/* todo align-items */
+.aling-items {
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-items: stretch;
+  align-items: flex-end;
+  align-items: baseline;
+  align-items: center;
+}
+
+/* todo align-content */
+
+.aling-content {
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  align-content: flex-end;
+  align-content: center;
+}
+
+/* todo propiedades que afectan a los hijos */
+.container-c {
+  background-color: #333;
+  /* height: 30vh; */
+  height: 400px;
+  width: 100%;
+  /* cada propiedad con sus valores por defecto */
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.item-c {
+  background-color: #666;
+  /* width: 20%;
+  height: 20%; */
+  border: medium solid #999;
+  /* valor por defecto */
+  flex-grow: 0;
+  /* flex-grow: 1; */
+  /* valor por defecto */
+  flex-shrink: 1;
+  /* valor por defecto */
+  flex-basis: auto;
+  flex-basis: 100px;
+  /* ? flex: es un shorthand de las propiedades flex-grow flex-shrink y flex-basis , en ese orden */
+  flex: 0 1 auto;
+  /* valor por defecto */
+  order: 0;
+  /* valor por defecto */
+  align-self: stretch;
+}
+/** calculos , 
+cada caja mide 85.14 de ancho y 161.39 de alto 
+ejemplo , se va a reducir el contenedor padre a 225 de ancho
+85.14 * 3 = 255.42
+255.42 - 225 = 30.42
+30.42 / 4 = 7.605  4 porque el segundo bloque está shrink a 2
+
+1- 85.14 - 7.605 = 77.538
+2- 85.14 - (7.605 * 2) = 69.93
+3- 85.14 - 7.605 = 77.538
+
+ */
+
+.item-c:nth-child(2) {
+  /* flex-grow: 2; */
+  /* flex-shrink: 2; */
+  order: 1;
+}
+.item-c:nth-child(3) {
+  /* flex-grow: 3; */
+  align-self: center;
+}

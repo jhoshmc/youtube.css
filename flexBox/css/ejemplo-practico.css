@@ -1,0 +1,106 @@
+html {
+  background-color: antiquewhite;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  /* minima altura */
+  min-height: 100vh;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+main {
+  /* factor de crecimiento, info en propiedades que afecatan a los hijos*/
+  flex-grow: 1;
+}
+
+.titlulares {
+  padding: 1rem;
+  background-color: #222;
+  color: #eee;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.menu ul {
+  list-style-type: none;
+}
+/* * responsive sin media query */
+.flex-responsive {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex-responsive-item {
+  /* flex: agrandamiento, reduccion ,tamaño del elemento en la linea de flexbox */
+  /* esto es lo que hace el responsive */
+  flex: 1 1 200px;
+  border: thin solid #f60;
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .menu ul {
+    display: flex;
+  }
+  .menu li {
+    padding: 0.5rem;
+  }
+  .flex-container {
+    display: flex;
+    align-items: center;
+  }
+  .flex-item {
+    flex: 0 0 50%;
+  }
+  /* * posible solucion para el siczac, video 12 de felxbox con jonmirca */
+  .flex-order-1 {
+    order: 1;
+  }
+  /* * otra solucion, tiene que aplicarse al elemento padre, section */
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.hero-image {
+  min-height: 100vh;
+  background-image: url("../assets/demon-slayer-tanjiro-wallpaper-1024x768_18.jpg");
+
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.hero-image div {
+  min-height: inherit;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-image h1 {
+  font-size: 5vw;
+}
