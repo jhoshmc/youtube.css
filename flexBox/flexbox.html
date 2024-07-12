@@ -6,298 +6,350 @@
     <title>Aprendiendo FlexBox</title>
     <link rel="stylesheet" href="css/flexbox.css" />
   </head>
-  <body>
-    <h1>Aprendiendo FlexBox</h1>
-    <hr />
-    <h2>Propiedades que afectan al contenedor padre</h2>
-    <h2>flexbox</h2>
-    <p>
-      Define que una caja será flexbox de bloque (flex) o flexbox de línea
-      (inline-flex)
-    </p>
-    <p>
-      El comportamiento por default de los hijos de una caja felxbox es que se
-      van a alinear y la direccion por defecto de la caja es horizontal (en
-      fila)
-    </p>
-    <h3>display:flex - es una caja que trabaja en bloque</h3>
-    <section class="container">
-      <article class="item">Flex Item 1</article>
-      <article class="item">Flex Item 2</article>
-      <article class="item">Flex Item 3</article>
-    </section>
-    <section class="container">
-      <article class="item">Flex Item 1</article>
-      <article class="item">Flex Item 2</article>
-      <article class="item">Flex Item 3</article>
-    </section>
+  <body id="inicio">
+    <header>
+      <div>
+        <h1>Aprendiendo FlexBox</h1>
+      </div>
+      <nav>
+        <a href="flexbox.html#flexbox">FlexBox</a>
+        <a href="flexbox.html#flex-direction">Flex-direction</a>
+        <a href="flexbox.html#flex-wrap">Flex-wrap</a>
+        <a href="flexbox.html#justify-content">Justify-content</a>
+        <a href="flexbox.html#aling-items">Aling-items</a>
+        <a href="flexbox.html#aling-content">Aling-content</a>
+        <a href="flexbox.html#hijos">Propiedades que afectan a los hijos</a>
+        <a href="flexbox.html#links">Referencias</a>
+      </nav>
+    </header>
 
-    <h3>
-      display:inline-flex - los bloques se van a comportar como si estuvieran en
-      linea
-    </h3>
-    <section class="container-1a">
-      <article class="item">Flex Item 1</article>
-      <article class="item">Flex Item 2</article>
-      <article class="item">Flex Item 3</article>
-    </section>
-    <section class="container-1a">
-      <article class="item">Flex Item 1</article>
-      <article class="item">Flex Item 2</article>
-      <article class="item">Flex Item 3</article>
-    </section>
-    <h2>flex-direction</h2>
-    <p>Define el eje principal (main axis) row - X, column - Y</p>
-    <p>tiene 4 valores:</p>
-    <ul>
-      <li>row - fila</li>
-      <li>row-reverse - invierte los elementos</li>
-      <li>colum - columna</li>
-      <li>colum-reverse - invierte el orden</li>
-    </ul>
-    <section class="container-direction">
-      <article class="item">Flex Item 1</article>
-      <article class="item">Flex Item 2</article>
-      <article class="item">Flex Item 3</article>
-    </section>
+    <main>
+      <section>
+        <h2>Propiedades que afectan al contenedor padre</h2>
+        <section id="flexbox">
+          <h2>flexbox</h2>
+          <p>
+            Define que una caja será flexbox de bloque (flex) o flexbox de línea
+            (inline-flex)
+          </p>
+          <p>
+            El comportamiento por default de los hijos de una caja felxbox es
+            que se van a alinear y la direccion por defecto de la caja es
+            horizontal (en fila)
+          </p>
+          <h3>display:flex - es una caja que trabaja en bloque</h3>
+          <section class="container">
+            <article class="item">Flex Item 1</article>
+            <article class="item">Flex Item 2</article>
+            <article class="item">Flex Item 3</article>
+          </section>
+          <section class="container">
+            <article class="item">Flex Item 1</article>
+            <article class="item">Flex Item 2</article>
+            <article class="item">Flex Item 3</article>
+          </section>
 
-    <section class="container-direction">
-      <article class="item">Flex Item 1</article>
-      <article class="item">Flex Item 2</article>
-      <article class="item">Flex Item 3</article>
-    </section>
-    <h2>flex-wrap</h2>
-    <p>
-      Define si la caja <strong>flexbox</strong> en vuelve o
-      <strong>NO</strong> a sus hijos
-    </p>
-    <p>
-      <strong>nota: </strong> esto va a depender de la direccion que le demos en
-      flex-direction , ya se X o Y
-    </p>
-    <section class="container-direction flex-wrap shortcut">
-      <article class="item">Item 1</article>
-      <article class="item">Item 2</article>
-      <article class="item">Item 3</article>
-      <article class="item">Item 4</article>
-      <article class="item">Item 5</article>
-      <article class="item">Item 6</article>
-      <article class="item">Item 7</article>
-      <article class="item">Item 8</article>
-      <article class="item">Item 9</article>
-      <article class="item">Item 10</article>
-      <article class="item">Item 11</article>
-      <article class="item">Item 12</article>
-      <article class="item">Item 13</article>
-      <article class="item">Item 14</article>
-      <article class="item">Item 15</article>
-      <article class="item">Item 16</article>
-      <article class="item">Item 17</article>
-      <article class="item">Item 18</article>
-      <article class="item">Item 19</article>
-    </section>
-    <h2>justify-content</h2>
-    <p>
-      Define la alineación de los hijos en el eje principal (main axis) dado por
-      <strong>flex-direction</strong> y tiene 6 valores:
-    </p>
-    <ul>
-      <li>
-        flex-start - es el valor por defecto. todos los elementos alinieados al
-        inicio
-      </li>
-      <li>flex-end</li>
-      <li>center</li>
-      <li>
-        space-between - ignora las orillas de la caja contenedora y reparte el
-        espacio entre los hijos
-      </li>
-      <li>
-        space-around - concidera las orillas , pero estas van a ser a la mitad
-        de los elementos
-      </li>
-      <li>
-        space-evenly - da el mismo valor a las arolillas que a los elementos
-        internos
-      </li>
-    </ul>
-    <p>tambein va a plicar segun el espacio que haiga en la caja padre</p>
-    <section class="container-direction shortcut-1a justify-content">
-      <article class="item">Item 1</article>
-      <article class="item">Item 2</article>
-      <article class="item">Item 3</article>
-      <article class="item">Item 4</article>
-      <article class="item">Item 5</article>
-      <article class="item">Item 6</article>
-      <article class="item">Item 7</article>
-      <article class="item">Item 8</article>
-      <article class="item">Item 9</article>
-      <article class="item">Item 10</article>
-      <article class="item">Item 11</article>
-      <article class="item">Item 12</article>
-      <article class="item">Item 13</article>
-      <article class="item">Item 14</article>
-      <article class="item">Item 15</article>
-      <article class="item">Item 16</article>
-      <article class="item">Item 17</article>
-      <article class="item">Item 18</article>
-      <article class="item">Item 19</article>
-    </section>
-    <p><strong> Alinear en el eje transversal </strong></p>
-    <h2>aling-items</h2>
-    <p>
-      Define la alineación de los hijos en el eje transversal (cross axis),
-      dentro de cada línea.
-    </p>
-    <p>tine 4 valores:</p>
-    <ul>
-      <li>flex-start -</li>
-      <li>flex-end</li>
-      <li>center</li>
-      <li>
-        stretch - valor por defecto, los elementos se estiran al tamaño del
-        padre, siempre y cuando no se les aya dado ancho o alto y dependiendo la
-        direccion
-      </li>
-      <li>baseline - define la linea imaginaria de todo el texto</li>
-    </ul>
-    <p>Esto funciona por cada linea que se tenga</p>
-    <section class="container-direction aling-items">
-      <article class="item-1a">Item 1</article>
-      <article class="item-1a">Item 2</article>
-      <article class="item-1a">Item 3</article>
-      <article class="item-1a">Item 4</article>
-      <article class="item-1a">Item 5</article>
-      <article class="item-1a">Item 6</article>
-      <article class="item-1a">Item 7</article>
-      <article class="item-1a">Item 8</article>
-      <article class="item-1a">Item 9</article>
-      <article class="item-1a">Item 10</article>
-      <article class="item-1a">Item 11</article>
-      <article class="item-1a">Item 12</article>
-      <article class="item-1a">Item 13</article>
-      <article class="item-1a">Item 14</article>
-      <article class="item-1a">Item 15</article>
-      <article class="item-1a">Item 16</article>
-      <article class="item-1a">Item 17</article>
-      <article class="item-1a">Item 18</article>
-      <article class="item-1a">Item 19</article>
-    </section>
-    <h2>align-content</h2>
-    <p>
-      Define la alineación de los hijos en el eje transversal (cross axis), NO
-      funciona cuando los hijos están en una sóla línea (cuando flex-wrap:
-      nowrap NO FUNCIONA)
-    </p>
-    <p>tiene 7 valores:</p>
-    <ul>
-      <li>flex-start</li>
-      <li>flex-end</li>
-      <li>center</li>
-      <li>space-between</li>
-      <li>space-around</li>
-      <li>space-evenly</li>
-      <li>stretch</li>
-    </ul>
-    <p>nota: va a funcinar cuando el valor de wrap sea wrap o wrap-reverse</p>
-    <section class="container-direction aling-content">
-      <article class="item">Item 1</article>
-      <article class="item">Item 2</article>
-      <article class="item">Item 3</article>
-      <article class="item">Item 4</article>
-      <article class="item">Item 5</article>
-      <article class="item">Item 6</article>
-      <article class="item">Item 7</article>
-      <article class="item">Item 8</article>
-      <article class="item">Item 9</article>
-      <article class="item">Item 10</article>
-      <article class="item">Item 11</article>
-      <article class="item">Item 12</article>
-      <article class="item">Item 13</article>
-      <article class="item">Item 14</article>
-      <article class="item">Item 15</article>
-      <article class="item">Item 16</article>
-      <article class="item">Item 17</article>
-      <article class="item">Item 18</article>
-      <article class="item">Item 19</article>
-    </section>
-    <hr />
-    <h2>Propiedades que afectan a los hijos</h2>
-    <p>son cinco propiedades :</p>
-    <ul>
-      <li>
-        <p>flex-grow - valor por defecto 0;</p>
-        <p>
-          Cuando la caja tenga espacio sobrante, es la habilidad o factor de
-          crecer, valor por defecto es 0, NO se aceptan valores negativos
-        </p>
-      </li>
-      <li>
-        <p>flex-shrink - valor por defecto 1;</p>
-        <p>
-          Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el
-          factor de encogerse, valor por defecto es 1, NO se aceptan valores
-          negativos
-        </p>
-      </li>
-      <li>
-        <p>flex-basis - valor por defecto auto</p>
-        <p>
-          Es el tamaño del elemento hijo dentro de la línea de la cja flexbox
-        </p>
+          <h3>
+            display:inline-flex - los bloques se van a comportar como si
+            estuvieran en linea
+          </h3>
+          <section class="container-1a">
+            <article class="item">Flex Item 1</article>
+            <article class="item">Flex Item 2</article>
+            <article class="item">Flex Item 3</article>
+          </section>
+          <section class="container-1a">
+            <article class="item">Flex Item 1</article>
+            <article class="item">Flex Item 2</article>
+            <article class="item">Flex Item 3</article>
+          </section>
+        </section>
+        <section id="flex-direction">
+          <h2>flex-direction</h2>
+          <p>Define el eje principal (main axis) row - X, column - Y</p>
+          <p>tiene 4 valores:</p>
+          <ul>
+            <li>row - fila</li>
+            <li>row-reverse - invierte los elementos</li>
+            <li>colum - columna</li>
+            <li>colum-reverse - invierte el orden</li>
+          </ul>
+          <section class="container-direction">
+            <article class="item">Flex Item 1</article>
+            <article class="item">Flex Item 2</article>
+            <article class="item">Flex Item 3</article>
+          </section>
+
+          <section class="container-direction">
+            <article class="item">Flex Item 1</article>
+            <article class="item">Flex Item 2</article>
+            <article class="item">Flex Item 3</article>
+          </section>
+        </section>
+        <section id="flex-wrap">
+          <h2>flex-wrap</h2>
+          <p>
+            Define si la caja <strong>flexbox</strong> en vuelve o
+            <strong>NO</strong> a sus hijos
+          </p>
+          <p>
+            <strong>nota: </strong> esto va a depender de la direccion que le
+            demos en flex-direction , ya se X o Y
+          </p>
+          <section class="container-direction flex-wrap shortcut">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+            <article class="item">Item 4</article>
+            <article class="item">Item 5</article>
+            <article class="item">Item 6</article>
+            <article class="item">Item 7</article>
+            <article class="item">Item 8</article>
+            <article class="item">Item 9</article>
+            <article class="item">Item 10</article>
+            <article class="item">Item 11</article>
+            <article class="item">Item 12</article>
+            <article class="item">Item 13</article>
+            <article class="item">Item 14</article>
+            <article class="item">Item 15</article>
+            <article class="item">Item 16</article>
+            <article class="item">Item 17</article>
+            <article class="item">Item 18</article>
+            <article class="item">Item 19</article>
+          </section>
+        </section>
+        <section id="justify-content">
+          <h2>justify-content</h2>
+          <p>
+            Define la alineación de los hijos en el eje principal (main axis)
+            dado por
+            <strong>flex-direction</strong> y tiene 6 valores:
+          </p>
+          <ul>
+            <li>
+              flex-start - es el valor por defecto. todos los elementos
+              alinieados al inicio
+            </li>
+            <li>flex-end</li>
+            <li>center</li>
+            <li>
+              space-between - ignora las orillas de la caja contenedora y
+              reparte el espacio entre los hijos
+            </li>
+            <li>
+              space-around - concidera las orillas , pero estas van a ser a la
+              mitad de los elementos
+            </li>
+            <li>
+              space-evenly - da el mismo valor a las arolillas que a los
+              elementos internos
+            </li>
+          </ul>
+          <p>tambein va a plicar segun el espacio que haiga en la caja padre</p>
+          <section class="container-direction shortcut-1a justify-content">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+            <article class="item">Item 4</article>
+            <article class="item">Item 5</article>
+            <article class="item">Item 6</article>
+            <article class="item">Item 7</article>
+            <article class="item">Item 8</article>
+            <article class="item">Item 9</article>
+            <article class="item">Item 10</article>
+            <article class="item">Item 11</article>
+            <article class="item">Item 12</article>
+            <article class="item">Item 13</article>
+            <article class="item">Item 14</article>
+            <article class="item">Item 15</article>
+            <article class="item">Item 16</article>
+            <article class="item">Item 17</article>
+            <article class="item">Item 18</article>
+            <article class="item">Item 19</article>
+          </section>
+          <p><strong> Alinear en el eje transversal </strong></p>
+        </section>
+        <section id="aling-items">
+          <h2>aling-items</h2>
+          <p>
+            Define la alineación de los hijos en el eje transversal (cross
+            axis), dentro de cada línea.
+          </p>
+          <p>tine 4 valores:</p>
+          <ul>
+            <li>flex-start -</li>
+            <li>flex-end</li>
+            <li>center</li>
+            <li>
+              stretch - valor por defecto, los elementos se estiran al tamaño
+              del padre, siempre y cuando no se les aya dado ancho o alto y
+              dependiendo la direccion
+            </li>
+            <li>baseline - define la linea imaginaria de todo el texto</li>
+          </ul>
+          <p>Esto funciona por cada linea que se tenga</p>
+          <section class="container-direction aling-items">
+            <article class="item-1a">Item 1</article>
+            <article class="item-1a">Item 2</article>
+            <article class="item-1a">Item 3</article>
+            <article class="item-1a">Item 4</article>
+            <article class="item-1a">Item 5</article>
+            <article class="item-1a">Item 6</article>
+            <article class="item-1a">Item 7</article>
+            <article class="item-1a">Item 8</article>
+            <article class="item-1a">Item 9</article>
+            <article class="item-1a">Item 10</article>
+            <article class="item-1a">Item 11</article>
+            <article class="item-1a">Item 12</article>
+            <article class="item-1a">Item 13</article>
+            <article class="item-1a">Item 14</article>
+            <article class="item-1a">Item 15</article>
+            <article class="item-1a">Item 16</article>
+            <article class="item-1a">Item 17</article>
+            <article class="item-1a">Item 18</article>
+            <article class="item-1a">Item 19</article>
+          </section>
+        </section>
+        <section id="aling-content">
+          <h2>align-content</h2>
+          <p>
+            Define la alineación de los hijos en el eje transversal (cross
+            axis), NO funciona cuando los hijos están en una sóla línea (cuando
+            flex-wrap: nowrap NO FUNCIONA)
+          </p>
+          <p>tiene 7 valores:</p>
+          <ul>
+            <li>flex-start</li>
+            <li>flex-end</li>
+            <li>center</li>
+            <li>space-between</li>
+            <li>space-around</li>
+            <li>space-evenly</li>
+            <li>stretch</li>
+          </ul>
+          <p>
+            nota: va a funcinar cuando el valor de wrap sea wrap o wrap-reverse
+          </p>
+          <section class="container-direction aling-content">
+            <article class="item">Item 1</article>
+            <article class="item">Item 2</article>
+            <article class="item">Item 3</article>
+            <article class="item">Item 4</article>
+            <article class="item">Item 5</article>
+            <article class="item">Item 6</article>
+            <article class="item">Item 7</article>
+            <article class="item">Item 8</article>
+            <article class="item">Item 9</article>
+            <article class="item">Item 10</article>
+            <article class="item">Item 11</article>
+            <article class="item">Item 12</article>
+            <article class="item">Item 13</article>
+            <article class="item">Item 14</article>
+            <article class="item">Item 15</article>
+            <article class="item">Item 16</article>
+            <article class="item">Item 17</article>
+            <article class="item">Item 18</article>
+            <article class="item">Item 19</article>
+          </section>
+        </section>
+      </section>
+      <hr />
+      <section id="hijos">
+        <h2>Propiedades que afectan a los hijos</h2>
+        <p>son cinco propiedades :</p>
         <ul>
           <li>
-            Si la caja flexbox tiene dirección de fila, flex-basis representa el
-            width
+            <p>flex-grow - valor por defecto 0;</p>
+            <p>
+              Cuando la caja tenga espacio sobrante, es la habilidad o factor de
+              crecer, valor por defecto es 0, NO se aceptan valores negativos
+            </p>
           </li>
           <li>
-            Si la caja flexbox tiene dirección de columna, flex-basis representa
-            el height
+            <p>flex-shrink - valor por defecto 1;</p>
+            <p>
+              Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad
+              o el factor de encogerse, valor por defecto es 1, NO se aceptan
+              valores negativos
+            </p>
           </li>
-          <li>Valor por defecto auto</li>
+          <li>
+            <p>flex-basis - valor por defecto auto</p>
+            <p>
+              Es el tamaño del elemento hijo dentro de la línea de la cja
+              flexbox
+            </p>
+            <ul>
+              <li>
+                Si la caja flexbox tiene dirección de fila, flex-basis
+                representa el width
+              </li>
+              <li>
+                Si la caja flexbox tiene dirección de columna, flex-basis
+                representa el height
+              </li>
+              <li>Valor por defecto auto</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              order - representa el orden que tendran los elementos en la caja
+              flexbox
+            </p>
+            <p>
+              Su valor por defecto es 0, se aceptan valores positivos y
+              negativos, un valor menor siempre irá antes que un valor mayor
+            </p>
+          </li>
+          <li>
+            <p>
+              aling-self - sobreescribe el valor el valor de la propiedad
+              aling-items sólo para el elemento hijo especificado
+            </p>
+            <p>
+              Su valor por defecto es strech, toma los mismos valores que
+              aling-items
+            </p>
+          </li>
         </ul>
-      </li>
-      <li>
-        <p>
-          order - representa el orden que tendran los elementos en la caja
-          flexbox
-        </p>
-        <p>
-          Su valor por defecto es 0, se aceptan valores positivos y negativos,
-          un valor menor siempre irá antes que un valor mayor
-        </p>
-      </li>
-      <li>
-        <p>
-          aling-self - sobreescribe el valor el valor de la propiedad
-          aling-items sólo para el elemento hijo especificado
-        </p>
-        <p>
-          Su valor por defecto es strech, toma los mismos valores que
-          aling-items
-        </p>
-      </li>
-    </ul>
-    <section class="container-c">
-      <article class="item-c">Flex Item 1</article>
-      <article class="item-c">Flex Item 2</article>
-      <article class="item-c">Flex Item 3</article>
-      <article class="item-c">Flex Item 4</article>
-      <article class="item-c">Flex Item 5</article>
-    </section>
-    <br />
-    <a href="video-10.html"
-      >Maquetación y Responsive Design con Flexbox artesanal</a
-    >
-    <br />
-    <a href="video-10-bootstrap.html"
-      >Maquetación y Responsive Design con Flexbox con bootstrap</a
-    >
-    <br />
-    <a href="Ejemplo-practico.html">Ejemplos prácticos con FlexBox</a>
-    <br />
-    <a href="bootstrap.html">Flexbox con Bootstrap</a>
-    <br />
-    <a href="../index.html">🤟</a>
+        <section class="container-c">
+          <article class="item-c">Flex Item 1</article>
+          <article class="item-c">Flex Item 2</article>
+          <article class="item-c">Flex Item 3</article>
+          <article class="item-c">Flex Item 4</article>
+          <article class="item-c">Flex Item 5</article>
+        </section>
+      </section>
+      <hr />
+      <section id="links">
+        <div class="contain-links">
+          <button>
+            <a href="video-10.html"
+              >Maquetación y Responsive Design con Flexbox artesanal</a
+            >
+          </button>
+          <button>
+            <a href="video-10-bootstrap.html"
+              >Maquetación y Responsive Design con Flexbox con bootstrap</a
+            >
+          </button>
+          <button>
+            <a href="Ejemplo-practico.html">Ejemplos prácticos con FlexBox</a>
+          </button>
+          <button>
+            <a href="bootstrap.html">Flexbox con Bootstrap</a>
+          </button>
+        </div>
+      </section>
+    </main>
+    <hr />
+    <footer>
+      <button>
+        <a href="../index.html">volver a inicio css</a>
+      </button>
+      <button>
+        <a href="flexbox.html#inicio">volver a inicio flexbox</a>
+      </button>
+    </footer>
   </body>
 </html>

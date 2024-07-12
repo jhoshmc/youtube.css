@@ -8,6 +8,42 @@ html {
 *::before {
   box-sizing: inherit;
 }
+/* ! estilos de la página */
+a {
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+  color: rgb(232, 23, 23);
+}
+
+header {
+  width: 100%;
+  height: auto;
+  background: lightblue;
+  border: thin solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: 0 0 10px 0;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+/* ! estilos del contenido a aprender */
 /* todo flex y inline-flex */
 .container,
 .container-1a {
@@ -167,4 +203,31 @@ ejemplo , se va a reducir el contenedor padre a 225 de ancho
 .item-c:nth-child(3) {
   /* flex-grow: 3; */
   align-self: center;
+}
+/*! estilos de la página  */
+.contain-links {
+  width: 100%;
+  height: auto;
+  /* border: thin solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* flex-direction: column; */
+}
+
+button {
+  width: auto;
+  height: 30px;
+  border: thin solid blue;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: lightskyblue;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

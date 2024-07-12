@@ -61,3 +61,13 @@ html {
   } 
 }
 */
+button {
+  border: thin solid blue;
+  border-radius: 10px;
+  width: auto;
+  height: 3rem;
+}
+
+a {
+  text-decoration: none;
+}

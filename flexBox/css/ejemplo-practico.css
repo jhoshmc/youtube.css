@@ -104,3 +104,19 @@ main {
 .hero-image h1 {
   font-size: 5vw;
 }
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer button {
+  width: 9rem;
+  height: 30px;
+  border-radius: 10px;
+  background: lightskyblue;
+}
+
+footer a {
+  color: black;
+}
