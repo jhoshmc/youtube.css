@@ -18,13 +18,13 @@ img {
 .card img {
   height: 300px;
   /** para que la imagen no se deforme */
-  /* rellenar, valor por defecto */
+  /* rellenar */
   object-fit: fill;
   /* contine */
   object-fit: contain;
   /* no adaptar el taño o composicion */
   object-fit: none;
-  /* recorta */
+  /* recorta, valor por defecto */
   object-fit: cover;
   /* es un valor dinamico
   toma el valor que sea menor de los valores contain y none
