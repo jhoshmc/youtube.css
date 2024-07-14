@@ -4,350 +4,361 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/box-model.css" />
+    <link rel="stylesheet" href="../css/box-model.css" />
     <title>Modelo de caja CSS</title>
   </head>
   <body>
-    <h1>Modelo de caja CSS</h1>
-    <section>
-      <article class="informacion">
-        <p>
-          Es la forma en que CSS ve a los elementos HTML y ,¿como los ve?, como
-          si fueran cajas con las siguientes propiedades:
-        </p>
-        <ol>
-          <li>
-            <h4>Content</h4>
-            <p>
-              El contendido (texto) del elemto html, tomando en cuenta sus
-              dimenciones (width & heigth)
-            </p>
-          </li>
-          <li>
-            <h4>Border</h4>
-            <p>El borde que demilita cada uno de los elementos html</p>
-          </li>
-          <li>
-            <h4>Padding</h4>
-            <p>
-              El relleno, son las distancias internas (la distancia entre el
-              elemento html y sus elementos hermanos o padres)
-            </p>
-          </li>
-          <li>
-            <h4>Margin</h4>
-            <p>
-              son las distancias externas (la distancia entre el elemento html y
-              sus elementos hermanos o padres )
-            </p>
-          </li>
-        </ol>
-        <p>
-          Dentro del modelo de caja hay que considerar que una caja tiene 4
-          lados
-        </p>
-        <ol>
-          <li>Arriba (top)</li>
-          <li>Derecha (rigth)</li>
-          <li>Abajo (buttom)</li>
-          <li>Izquierda (left)</li>
-        </ol>
-      </article>
-    </section>
-    <hr />
-    <section>
-      <h3 class="ancho-alto">width & heigth (ancho y alto)</h3>
-    </section>
-    <hr />
-    <section>
-      <article class="border">
-        <h3>border</h3>
-        <p>colores individuales</p>
-        <h4>sintetisar las 3 propiedades</h4>
-      </article>
-    </section>
-    <hr />
-    <section>
-      <article>
-        <h2>Margin & Padding</h2>
-        <div class="caja-uno">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam beatae
-          pariatur tenetur quia quam expedita, aut alias numquam voluptate
-          repudiandae. A alias quibusdam suscipit aut consequatur dolorum!
-          Dolores, ab natus.
+    <header id="inicio">
+      <h1>Modelo de caja CSS</h1>
+      <button>
+        <a href="../index.html">vover a aprendiendo css</a>
+      </button>
+    </header>
+    <main>
+      <section>
+        <article class="informacion">
+          <p>
+            Es la forma en que CSS ve a los elementos HTML y ,¿como los ve?,
+            como si fueran cajas con las siguientes propiedades:
+          </p>
+          <ol>
+            <li>
+              <h4>Content</h4>
+              <p>
+                El contendido (texto) del elemto html, tomando en cuenta sus
+                dimenciones (width & heigth)
+              </p>
+            </li>
+            <li>
+              <h4>Border</h4>
+              <p>El borde que demilita cada uno de los elementos html</p>
+            </li>
+            <li>
+              <h4>Padding</h4>
+              <p>
+                El relleno, son las distancias internas (la distancia entre el
+                elemento html y sus elementos hermanos o padres)
+              </p>
+            </li>
+            <li>
+              <h4>Margin</h4>
+              <p>
+                son las distancias externas (la distancia entre el elemento html
+                y sus elementos hermanos o padres )
+              </p>
+            </li>
+          </ol>
+          <p>
+            Dentro del modelo de caja hay que considerar que una caja tiene 4
+            lados
+          </p>
+          <ol>
+            <li>Arriba (top)</li>
+            <li>Derecha (rigth)</li>
+            <li>Abajo (buttom)</li>
+            <li>Izquierda (left)</li>
+          </ol>
+        </article>
+      </section>
+      <hr />
+      <section>
+        <h3 class="ancho-alto">width & heigth (ancho y alto)</h3>
+      </section>
+      <hr />
+      <section>
+        <article class="border">
+          <h3>border</h3>
+          <p>colores individuales</p>
+          <h4>sintetisar las 3 propiedades</h4>
+        </article>
+      </section>
+      <hr />
+      <section>
+        <article>
+          <h2>Margin & Padding</h2>
+          <div class="caja-uno">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+            beatae pariatur tenetur quia quam expedita, aut alias numquam
+            voluptate repudiandae. A alias quibusdam suscipit aut consequatur
+            dolorum! Dolores, ab natus.
+          </div>
+          <div class="caja-dos">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ad
+            hic modi magni iusto odio error repellat a, ea, alias consequatur
+            earum, laboriosam necessitatibus nobis! Eos dolore non aliquid amet.
+          </div>
+        </article>
+      </section>
+      <hr />
+      <section>
+        <article class="informacion">
+          <h2>Cajas de linea vs cajas de bloque</h2>
+          <h4>Caja de Liena</h4>
+          <ul>
+            <li>Ocupan el espacio necesario para mostrar su contenido</li>
+            <li>No tienen dimenciones modificables (width,heigth)</li>
+            <li>Permiten otros elementos a su lado</li>
+            <li>
+              Padding y Margin solo empujan a elementos adayacentes en
+              horizontal, NUNCA EN VERTICAL
+            </li>
+          </ul>
+          <h4>Caja de Bloque</h4>
+          <ul>
+            <li>Ocupan todo el ancho disponible</li>
+            <li>Tienen dimenciones modificables (width, heigth)</li>
+            <li>
+              No Permiten otros elementos a su lado (aunque especifique un
+              ancho, siguen ocupando todo el espacio disponible)
+            </li>
+          </ul>
+        </article>
+        <br /><br />
+        <span class="caja-linea">Esto es una caja de linea</span>
+        <span>esto es una span </span>
+        <div class="caja-bloque">Esto es una caja de bloque</div>
+      </section>
+      <hr />
+      <section>
+        <article class="informacion">
+          <h2>Propiedad display</h2>
+          <ul>
+            <li>inline</li>
+            <li>block</li>
+            <li>
+              inline-block: Se comporta como un elemento de linea, pero acepta
+              modificar sus dimenciones(alto , ancho)
+            </li>
+            <li>none</li>
+            <li>table</li>
+            <li>list-item</li>
+            <li>flex: ver curso de flexbox css</li>
+            <li>grid: ver curso de Grid css</li>
+          </ul>
+        </article>
+        <span class="caja-linea-d"
+          >Esto es una caja de linea con display block</span
+        >
+        <span>esto es una span </span>
+        <div class="caja-bloque-d">
+          Esto es una caja de bloque con display inline
         </div>
-        <div class="caja-dos">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ad
-          hic modi magni iusto odio error repellat a, ea, alias consequatur
-          earum, laboriosam necessitatibus nobis! Eos dolore non aliquid amet.
+        <br /><br /><br />
+        <p>
+          con display none, esto oculta a la etiqueta, pero si la carga, revisar
+          en el html. <br />
+          Esto se puede usar, por ejemplo en los formularios , cuando salta un
+          mensaje diciendo que necesita que pongas una mayuscula, etc, <br />
+          es para mostrar o ocultar elementos interactivos dependiendo de las
+          acciones que haga el usuario
+        </p>
+        <div class="caja-none">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste facilis
+          eveniet hic in nesciunt veniam, reprehenderit deleniti doloremque
+          labore est saepe officiis ut exercitationem porro dolorum aperiam odio
+          quod illum!
         </div>
-      </article>
-    </section>
-    <hr />
-    <section>
-      <article class="informacion">
-        <h2>Cajas de linea vs cajas de bloque</h2>
-        <h4>Caja de Liena</h4>
+        <span class="caja-linea-bloque"
+          >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero minus
+          tenetur earum nisi eos, qui nihil veniam culpa, maiores suscipit hic
+          ipsum repudiandae minima impedit illo consequuntur totam, animi
+          praesentium?</span
+        >
+        <span>hola, estoy al lado</span>
+        <p>
+          por defaul se aplica un display:list-item, se le aplica sierta sangria
+        </p>
         <ul>
-          <li>Ocupan el espacio necesario para mostrar su contenido</li>
-          <li>No tienen dimenciones modificables (width,heigth)</li>
-          <li>Permiten otros elementos a su lado</li>
-          <li>
-            Padding y Margin solo empujan a elementos adayacentes en horizontal,
-            NUNCA EN VERTICAL
-          </li>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+          <li>item 4</li>
         </ul>
-        <h4>Caja de Bloque</h4>
-        <ul>
-          <li>Ocupan todo el ancho disponible</li>
-          <li>Tienen dimenciones modificables (width, heigth)</li>
-          <li>
-            No Permiten otros elementos a su lado (aunque especifique un ancho,
-            siguen ocupando todo el espacio disponible)
-          </li>
-        </ul>
-      </article>
-      <br /><br />
-      <span class="caja-linea">Esto es una caja de linea</span>
-      <span>esto es una span </span>
-      <div class="caja-bloque">Esto es una caja de bloque</div>
-    </section>
-    <hr />
-    <section>
-      <article class="informacion">
-        <h2>Propiedad display</h2>
-        <ul>
-          <li>inline</li>
-          <li>block</li>
-          <li>
-            inline-block: Se comporta como un elemento de linea, pero acepta
-            modificar sus dimenciones(alto , ancho)
-          </li>
-          <li>none</li>
-          <li>table</li>
-          <li>list-item</li>
-          <li>flex: ver curso de flexbox css</li>
-          <li>grid: ver curso de Grid css</li>
-        </ul>
-      </article>
-      <span class="caja-linea-d"
-        >Esto es una caja de linea con display block</span
-      >
-      <span>esto es una span </span>
-      <div class="caja-bloque-d">
-        Esto es una caja de bloque con display inline
-      </div>
-      <br /><br /><br />
-      <p>
-        con display none, esto oculta a la etiqueta, pero si la carga, revisar
-        en el html. <br />
-        Esto se puede usar, por ejemplo en los formularios , cuando salta un
-        mensaje diciendo que necesita que pongas una mayuscula, etc, <br />
-        es para mostrar o ocultar elementos interactivos dependiendo de las
-        acciones que haga el usuario
-      </p>
-      <div class="caja-none">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste facilis
-        eveniet hic in nesciunt veniam, reprehenderit deleniti doloremque labore
-        est saepe officiis ut exercitationem porro dolorum aperiam odio quod
-        illum!
-      </div>
-      <span class="caja-linea-bloque"
-        >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero minus
-        tenetur earum nisi eos, qui nihil veniam culpa, maiores suscipit hic
-        ipsum repudiandae minima impedit illo consequuntur totam, animi
-        praesentium?</span
-      >
-      <span>hola, estoy al lado</span>
-      <p>
-        por defaul se aplica un display:list-item, se le aplica sierta sangria
-      </p>
-      <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-        <li>item 4</li>
-      </ul>
-      <p>por defaul se aplica un display:table</p>
-      <table>
-        <tr>
-          <td>celda 1</td>
-          <td>celda 2</td>
-          <td>celda 3</td>
-        </tr>
-        <tr>
-          <td>celda 4</td>
-          <td>celda 5</td>
-          <td>celda 6</td>
-        </tr>
-        <tr>
-          <td>celda 7</td>
-          <td>celda 8</td>
-          <td>celda 9</td>
-        </tr>
-      </table>
-    </section>
-    <hr />
-    <section>
-      <h2>Propiedad Visivility</h2>
-      <p>
-        con visivility con el valor hidden , se quita la visivilidad y se
-        mantiene su espacio
-      </p>
-      <div class="caja-hidden">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, commodi!
-        Accusantium eum nihil ex accusamus pariatur quae voluptate nisi amet,
-        necessitatibus nobis animi dicta ut! Reprehenderit voluptates a
-        explicabo in.
-      </div>
-    </section>
-    <hr />
-    <section class="overflow-container">
-      <h2>Propiedad Overflow</h2>
-      <p>el desvorde como se ve con sus valores</p>
-      <h4>visible: es el valor por defecto</h4>
-      <p class="overflow-v">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-        laudantium iusto aliquid aperiam esse quia, odit possimus veniam, minima
-        architecto sapiente, repudiandae enim dicta repellat! Dicta nisi ullam
-        ipsam facilis.
-      </p>
-      <br /><br />
-      <h4>hidden: oculta lo que se desvorda</h4>
-      <p class="overflow-h">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-        voluptatibus quaerat harum reprehenderit fugit quod in quidem, modi nam,
-        deleniti ducimus quia necessitatibus cupiditate dolores ad illo
-        exercitationem, impedit nihil?
-      </p>
-      <h4>scroll: generea barras laterales para seguir leyendo</h4>
-      <p class="overflow-s">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
-        quibusdam autem hic dolor? Sapiente officia natus facilis quisquam.
-        Eligendi eveniet porro dolore ab perferendis debitis, nisi officia ad
-        laudantium facere!
-      </p>
-      <h4>
-        Auto: generara una barra de scroll donde se necesite, sea horizontal o
-        vertical
-      </h4>
-      <p class="overflow-a">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-        reprehenderit repellendus ut voluptatum iusto commodi est, qui pariatur,
-        totam ea incidunt earum blanditiis ipsam, eius quasi at laudantium saepe
-        repellat?
-      </p>
-    </section>
-    <hr />
-    <section>
-      <h2>Tamaño de caja</h2>
-      <h4>box-sizing:content-box: es el valor por defecto</h4>
-      <p>
-        la propiedad ancho y alto comienza a conciderezar desde el contenido
-      </p>
-      <p>
-        mientras se valla agreganso padding,border: figurara que el contenido
-        tiene un tamaño de 500 x 250, pero en realidad , tambien sumara lo
-        agregado <br />
-        medida contenido (w,h), padding(10) border(5), caja total
-        <br />
-        w 500 + 10 + 10 + 5 + 5 = 530 <br />
-        h 250 + 10 + 10 + 5 + 5 = 280
-      </p>
+        <p>por defaul se aplica un display:table</p>
+        <table>
+          <tr>
+            <td>celda 1</td>
+            <td>celda 2</td>
+            <td>celda 3</td>
+          </tr>
+          <tr>
+            <td>celda 4</td>
+            <td>celda 5</td>
+            <td>celda 6</td>
+          </tr>
+          <tr>
+            <td>celda 7</td>
+            <td>celda 8</td>
+            <td>celda 9</td>
+          </tr>
+        </table>
+      </section>
+      <hr />
+      <section>
+        <h2>Propiedad Visivility</h2>
+        <p>
+          con visivility con el valor hidden , se quita la visivilidad y se
+          mantiene su espacio
+        </p>
+        <div class="caja-hidden">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet,
+          commodi! Accusantium eum nihil ex accusamus pariatur quae voluptate
+          nisi amet, necessitatibus nobis animi dicta ut! Reprehenderit
+          voluptates a explicabo in.
+        </div>
+      </section>
+      <hr />
+      <section class="overflow-container">
+        <h2>Propiedad Overflow</h2>
+        <p>el desvorde como se ve con sus valores</p>
+        <h4>visible: es el valor por defecto</h4>
+        <p class="overflow-v">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+          laudantium iusto aliquid aperiam esse quia, odit possimus veniam,
+          minima architecto sapiente, repudiandae enim dicta repellat! Dicta
+          nisi ullam ipsam facilis.
+        </p>
+        <br /><br />
+        <h4>hidden: oculta lo que se desvorda</h4>
+        <p class="overflow-h">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+          voluptatibus quaerat harum reprehenderit fugit quod in quidem, modi
+          nam, deleniti ducimus quia necessitatibus cupiditate dolores ad illo
+          exercitationem, impedit nihil?
+        </p>
+        <h4>scroll: generea barras laterales para seguir leyendo</h4>
+        <p class="overflow-s">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
+          quibusdam autem hic dolor? Sapiente officia natus facilis quisquam.
+          Eligendi eveniet porro dolore ab perferendis debitis, nisi officia ad
+          laudantium facere!
+        </p>
+        <h4>
+          Auto: generara una barra de scroll donde se necesite, sea horizontal o
+          vertical
+        </h4>
+        <p class="overflow-a">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+          reprehenderit repellendus ut voluptatum iusto commodi est, qui
+          pariatur, totam ea incidunt earum blanditiis ipsam, eius quasi at
+          laudantium saepe repellat?
+        </p>
+      </section>
+      <hr />
+      <section>
+        <h2>Tamaño de caja</h2>
+        <h4>box-sizing:content-box: es el valor por defecto</h4>
+        <p>
+          la propiedad ancho y alto comienza a conciderezar desde el contenido
+        </p>
+        <p>
+          mientras se valla agreganso padding,border: figurara que el contenido
+          tiene un tamaño de 500 x 250, pero en realidad , tambien sumara lo
+          agregado <br />
+          medida contenido (w,h), padding(10) border(5), caja total
+          <br />
+          w 500 + 10 + 10 + 5 + 5 = 530 <br />
+          h 250 + 10 + 10 + 5 + 5 = 280
+        </p>
 
-      <div class="box-sizing-content">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum illo
-        nemo harum perspiciatis similique blanditiis distinctio, magnam deserunt
-        vero eveniet exercitationem, voluptatum temporibus odit aliquid
-        praesentium suscipit asperiores ipsam nostrum.
-      </div>
-      <h4>box-sizing:border-box</h4>
-      <p>
-        El tamaño de la cala lo va a conciderar desde el borde(todo el tamaño
-        que le demos de padding y de border lo va a conciderar) <br />
-        esto quiere decir que el espacio del contenido se va a ir reduciendo
-        para que al final sean las medidas establecidas <br />
-        caja total (w,h), padding(10) border(5), contenido de la caja
-        <br />
-        w 500 - 10 - 10 - 5 - 5 : 470<br />
-        h 250 - 10 -10 - 5 - 5 : 220
-      </p>
-      <div class="box-sizing-border">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-        reprehenderit amet unde a. Ullam et voluptate dignissimos, molestiae
-        atque, aut dolorem cum, cupiditate ex saepe minus itaque quisquam
-        quaerat dolor!
-      </div>
-      <p>hack para resetear todas la cajas de un documento html</p>
-      <p>como ventaja es que el ancho y el alto aplique desde el borde</p>
-      <article class="container-col-3">
-        <section class="items">section 1</section>
-        <section class="items">section 2</section>
-        <section class="items">section 3</section>
-      </article>
-    </section>
-    <hr />
-    <section>
-      <h2>Propiedad Float & Clear</h2>
-      <p>
-        Nos va a permiter flotar elementos , hacia la derecha o Izquierda
-        <strong>nota: se hoy en dia se concidera una mala practica</strong>,
-        justamente por que los elementos floran , luego hay problemas de
-        superposicion de los elementos que siguen y no flotan
-      </p>
-      <p>
-        <strong>clear</strong> nos va a servir para limpiar los ejectos de los
-        elementos flotados
-      </p>
-      <article class="container-floats">
-        <section class="float-right">Este elemento flota a la derecha</section>
+        <div class="box-sizing-content">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum illo
+          nemo harum perspiciatis similique blanditiis distinctio, magnam
+          deserunt vero eveniet exercitationem, voluptatum temporibus odit
+          aliquid praesentium suscipit asperiores ipsam nostrum.
+        </div>
+        <h4>box-sizing:border-box</h4>
+        <p>
+          El tamaño de la cala lo va a conciderar desde el borde(todo el tamaño
+          que le demos de padding y de border lo va a conciderar) <br />
+          esto quiere decir que el espacio del contenido se va a ir reduciendo
+          para que al final sean las medidas establecidas <br />
+          caja total (w,h), padding(10) border(5), contenido de la caja
+          <br />
+          w 500 - 10 - 10 - 5 - 5 : 470<br />
+          h 250 - 10 -10 - 5 - 5 : 220
+        </p>
+        <div class="box-sizing-border">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          reprehenderit amet unde a. Ullam et voluptate dignissimos, molestiae
+          atque, aut dolorem cum, cupiditate ex saepe minus itaque quisquam
+          quaerat dolor!
+        </div>
+        <p>hack para resetear todas la cajas de un documento html</p>
+        <p>como ventaja es que el ancho y el alto aplique desde el borde</p>
+        <article class="container-col-3">
+          <section class="items">section 1</section>
+          <section class="items">section 2</section>
+          <section class="items">section 3</section>
+        </article>
+      </section>
+      <hr />
+      <section>
+        <h2>Propiedad Float & Clear</h2>
+        <p>
+          Nos va a permiter flotar elementos , hacia la derecha o Izquierda
+          <strong>nota: se hoy en dia se concidera una mala practica</strong>,
+          justamente por que los elementos floran , luego hay problemas de
+          superposicion de los elementos que siguen y no flotan
+        </p>
+        <p>
+          <strong>clear</strong> nos va a servir para limpiar los ejectos de los
+          elementos flotados
+        </p>
+        <article class="container-floats">
+          <section class="float-right">
+            Este elemento flota a la derecha
+          </section>
 
-        <section class="float-left">Este elemento flota a la izquierda</section>
-      </article>
-      <!-- antes se dejava un div basio , cosa que es un mala practica; para aplicar clear y corregir  -->
-      <div class="clear-fix"></div>
-      <article>
-        <section>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-          dignissimos dolores iusto numquam, fuga ratione fugiat culpa. Itaque
-          debitis quisquam officia modi, deleniti voluptates incidunt qui,
-          sequi, magnam voluptate totam!
-        </section>
-      </article>
-    </section>
-    <hr />
-    <section>
-      <h2>Colapso de imagenes verticales</h2>
-      <div>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
-        voluptas omnis explicabo fugit adipisci corrupti consequatur nostrum
-        necessitatibus earum deleniti incidunt eos, praesentium, maiores esse
-        quia cupiditate, accusantium illo repudiandae.
-      </div>
-      <p>consejo: ocupar margin-top o margin-buttom, pero no ambos</p>
-      <p>los margenes vertivales se colapzan</p>
-      <arclicle class="margin-collapse">
-        <section>section 1</section>
-        <section>section 2</section>
-        <p>suma de margenes horizontales</p>
-        <p>margenes horizontales se van sumando</p>
-        <section>
-          <span>span 1</span>
-          <span>span 2</span>
-          <span>span 3</span>
-          <span>span 4</span>
-        </section>
-      </arclicle>
-    </section>
-    <hr />
-    <section>
-      <h2>Centrado de cajas</h2>
-      <article class="sitio-web">
-        <header>Cabecera</header>
-        <main>Contenido Principal</main>
-        <footer>Pie de página</footer>
-      </article>
-    </section>
-    <a href="index.html">😎</a>
+          <section class="float-left">
+            Este elemento flota a la izquierda
+          </section>
+        </article>
+        <!-- antes se dejava un div basio , cosa que es un mala practica; para aplicar clear y corregir  -->
+        <div class="clear-fix"></div>
+        <article>
+          <section>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+            dignissimos dolores iusto numquam, fuga ratione fugiat culpa. Itaque
+            debitis quisquam officia modi, deleniti voluptates incidunt qui,
+            sequi, magnam voluptate totam!
+          </section>
+        </article>
+      </section>
+      <hr />
+      <section>
+        <h2>Colapso de imagenes verticales</h2>
+        <div>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
+          voluptas omnis explicabo fugit adipisci corrupti consequatur nostrum
+          necessitatibus earum deleniti incidunt eos, praesentium, maiores esse
+          quia cupiditate, accusantium illo repudiandae.
+        </div>
+        <p>consejo: ocupar margin-top o margin-buttom, pero no ambos</p>
+        <p>los margenes vertivales se colapzan</p>
+        <arclicle class="margin-collapse">
+          <section>section 1</section>
+          <section>section 2</section>
+          <p>suma de margenes horizontales</p>
+          <p>margenes horizontales se van sumando</p>
+          <section>
+            <span>span 1</span>
+            <span>span 2</span>
+            <span>span 3</span>
+            <span>span 4</span>
+          </section>
+        </arclicle>
+      </section>
+      <hr />
+      <section>
+        <h2>Centrado de cajas</h2>
+        <article class="sitio-web">
+          <header>Cabecera</header>
+          <main>Contenido Principal</main>
+          <footer>Pie de página</footer>
+        </article>
+      </section>
+      <a class="back" href="box-model.html#inicio">😎</a>
+    </main>
   </body>
 </html>
